@@ -78,6 +78,9 @@ au BufNewFile,BufRead *.json set ft=javascript
 
 au BufRead,BufNewFile *.txt call s:setupWrapping()
 
+" drupalfiles are PHP
+au BufRead,BufNewFile *.{module,theme,inc,install,engine,profile,test} set ft=drupal.php
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -127,4 +130,5 @@ colorscheme solarized
 
 " Directories for swp files
 set backupdir=~/.vim
-"
+
+
