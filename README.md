@@ -25,6 +25,7 @@ Switch to the `~/.vim` directory, and fetch submodules:
 * rails                 Ruby on Rails utilities
 * snipMate              Snippets
 * supertab              Tab autocomplete based on opened files
+* unimpaired            Handy bracket mapping, mostly for bubbling text
 * vim-colors-solarized  Solarized colorscheme
 
 # Vimrc and customisations:
