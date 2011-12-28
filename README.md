@@ -18,6 +18,7 @@ Switch to the `~/.vim` directory, and fetch submodules:
 # Contents:
 
 * ack.vim               Search strings in project
+* bufkill               Unload/delete/wipe a buffer, keep its window(s), display last accessed buffer(s)
 * command-t             Open files by pattern
 * dbgpclient            PHP Xdebug debugger
 * nerdcommenter         Fast commenting sourcecode
