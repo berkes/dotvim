@@ -131,4 +131,7 @@ colorscheme solarized
 " Directories for swp files
 set backupdir=~/.vim
 
+" Buffer management
+" Allow switching between buffers, even if they have changes.·
+set hidden
 
