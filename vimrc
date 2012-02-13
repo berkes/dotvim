@@ -131,6 +131,10 @@ set modelines=10
 set background=dark
 colorscheme solarized
 
+" Powerline settings
+let g:Powerline_symbols = 'fancy'
+
+
 " Directories for swp files
 set backupdir=~/.vim
 set dir=~/.vim
