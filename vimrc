@@ -143,3 +143,5 @@ set dir=~/.vim
 " Allow switching between buffers, even if they have changes.·
 set hidden
 
+" allow the . to execute once for each line of a visual selection
+vnoremap . :normal .<CR>
