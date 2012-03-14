@@ -40,6 +40,9 @@ set noequalalways
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
 
+" Tagbar configuration
+map <Leader>f :TagbarToggle<CR>
+
 " Command-T configuration
 let g:CommandTMaxHeight=20
 
