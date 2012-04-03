@@ -24,13 +24,18 @@ Switch to the `~/.vim` directory, and fetch submodules:
 * nerdcommenter         Fast commenting sourcecode
 * nerdtree              File drawer
 * rails                 Ruby on Rails utilities
-* snipMate              Snippets
 * supertab              Tab autocomplete based on opened files
 * unimpaired            Handy bracket mapping, mostly for bubbling text
+* UltiSnips             Snippets
 * vim-colors-solarized  Solarized colorscheme
+* vim-powerline         Powerline that looks pretty
 
 # Vimrc and customisations:
 
 * Bubble text up and down with c-arrows
 * Set common Rails files to filetype Ruby
 * Set common Drupal files to filetype Drupal and PHP
+
+# Changelog
+
+* di apr  3  - 0.1 - Seems stable enough for a first release
