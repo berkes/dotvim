@@ -40,6 +40,9 @@ set noequalalways
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
 
+" Tagbar configuration
+map <Leader>f :TagbarToggle<CR>
+
 " Command-T configuration
 let g:CommandTMaxHeight=20
 
@@ -48,6 +51,8 @@ map <Leader><Leader> :ZoomWin<CR>
 
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+map <Leader>rtr :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
+
 map <C-\> :tnext<CR>
 
 " Remember last location in file
@@ -143,3 +148,5 @@ set dir=~/.vim
 " Allow switching between buffers, even if they have changes.·
 set hidden
 
+" allow the . to execute once for each line of a visual selection
+vnoremap . :normal .<CR>

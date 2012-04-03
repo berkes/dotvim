@@ -1,5 +1,24 @@
+snippet req "Require" b
+require '${1:library or basename}'
+endsnippet
+
 snippet module "A module block" b
 module ${1:ModuleName}
   ${2:#TODO}
+end
+endsnippet
+
+###########
+#  RSPEC  #
+###########
+snippet describe "Describe block" b
+describe ${1:'${2:description}'} do
+  ${3:#TODO}
+end
+endsnippet
+
+snippet it "it block" b
+it '${1:should do something}' do
+  ${2:pending "@TODO:Implement"}
 end
 endsnippet

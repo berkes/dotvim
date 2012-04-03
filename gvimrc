@@ -71,6 +71,8 @@ set guioptions-=T
 " Default gui color scheme
 "color ir_black
 
+set guifont=Ubuntu\ Mono\ 12
+
 " ConqueTerm wrapper
 function StartTerm()
   execute 'ConqueTerm ' . $SHELL . ' --login'
