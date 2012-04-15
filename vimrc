@@ -86,6 +86,9 @@ au BufRead,BufNewFile *.txt call s:setupWrapping()
 " drupalfiles are PHP
 au BufRead,BufNewFile *.{module,theme,inc,install,engine,profile,test} set ft=drupal.php
 
+" scad files are openscad
+au Bufread,BufNewFile *.scad filetype=openscad
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
