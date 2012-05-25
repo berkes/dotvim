@@ -23,3 +23,12 @@ endsnippet
 snippet cube "3D cube shape"
 cube(size = [${1:x}, ${2:y}, ${3:z}]);
 endsnippet
+
+###########################################################################
+#                             Transformations                             #
+###########################################################################
+snippet translate "Translate modifier"
+translate(v = [${1:x}, ${2:y}, ${3:z}]) {
+  ${VISUAL}${4}
+}
+endsnippet

@@ -1,0 +1,15 @@
+###########################################################################
+#                                   OOP                                   #
+###########################################################################
+snippet getter "Define a getter function"
+public function get_${1:var_name}() {
+  return $this->$$1;
+}
+endsnippet
+snippet setter "Define a setter function"
+public function set_${1:var_name}($$1) {
+  $this->$1 = $$1;
+}
+endsnippet
+
+

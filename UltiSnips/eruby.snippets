@@ -7,6 +7,17 @@ snippet t "Any Tag" !b
 </$1>
 endsnippet
 
+snippet p "P, Paragraph tag" !b
+<p${2:${3: id="${4:identifier}"}${5: class="${6:class names}"}${7: other attributes}}>
+  ${VISUAL}$0
+</p>
+endsnippet
+
+snippet h "H1-H6 Heading" !b
+<h${1:1}${2:${3: id="${4:identifier}"}${5: class="${6:class names}"}${7: other attributes}}>
+  ${VISUAL}$0
+</h$1>
+endsnippet
 ###########################################################################
 #                                   ERB                                   #
 ###########################################################################
