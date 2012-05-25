@@ -87,7 +87,7 @@ au BufRead,BufNewFile *.txt call s:setupWrapping()
 au BufRead,BufNewFile *.{module,theme,inc,install,engine,profile,test} set ft=drupal.php
 
 " scad files are openscad
-au Bufread,BufNewFile *.scad filetype=openscad
+au Bufread,BufNewFile *.scad set filetype=openscad
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -122,15 +122,6 @@ vmap <C-Down> ]egv
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
 
-" gist-vim defaults
-if has("mac")
-  let g:gist_clip_command = 'pbcopy'
-elseif has("unix")
-  let g:gist_clip_command = 'xclip -selection clipboard'
-endif
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-
 " Use modeline overrides
 set modeline
 set modelines=10
@@ -141,7 +132,6 @@ colorscheme solarized
 
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
-
 
 " Directories for swp files
 set backupdir=~/.vim

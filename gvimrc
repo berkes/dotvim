@@ -71,6 +71,9 @@ set guioptions-=T
 " Default gui color scheme
 "color ir_black
 
+" Use system clipboard.
+set clipboard=unnamed
+
 set guifont=Ubuntu\ Mono\ 12
 
 " ConqueTerm wrapper
