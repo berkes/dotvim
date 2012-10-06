@@ -11,5 +11,36 @@ public function set_${1:var_name}($$1) {
   $this->$1 = $$1;
 }
 endsnippet
+snippet form_callbacks "Form functions: form declaration, validate and submit-callbacks"
+/**
+ * Build form for $2
+ */
+function ${1:module_name}_form_${2:form_name}($form, &$form_state) {
+  $form = array();
 
+  ${3:...}
+
+  $form['submit'] = array(
+    "#type"   => "submit",
+    "#value"  => "Save",
+  );
+  return $form;
+}
+
+/**
+ * Validate callback for $2 form
+ */
+function $1_form_$2_validate($form, $form_state) {
+  if ($form_state["values"]["some_value"] == "") {
+    drupal_set_error("some error");
+  }
+}
+
+/**
+ * Submit callback for $2 form
+ */
+function $1_form_$2_submit($form, $form_state) {
+  //... actions on submit
+}
+endsnippet
 
