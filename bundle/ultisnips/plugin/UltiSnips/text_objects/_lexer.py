@@ -54,6 +54,19 @@ class _TextIterator(object):
     @property
     def pos(self):
         return Position(self._line, self._col)
+
+def unescape(s):
+    rv = ""
+    i = 0
+    while i < len(s):
+        if i+1 < len(s) and s[i] == '\\':
+            rv += s[i+1]
+            i += 1
+        else:
+            rv += s[i]
+        i += 1
+    return rv
+
 # End: Helper Classes  }}}
 # Helper functions  {{{
 def _parse_number(stream):
@@ -87,21 +100,25 @@ def _parse_till_closing_brace(stream):
             rv += c
     return rv
 
-def _parse_till_unescaped_char(stream, char):
+def _parse_till_unescaped_char(stream, chars):
     """
-    Returns all chars till a non-escaped `char` is found.
+    Returns all chars till a non-escaped char is found.
 
-    Will also consume the closing `char`, but not return it
+    Will also consume the closing char, but and return it as second
+    return value
     """
     rv = ""
     while True:
-        if EscapeCharToken.starts_here(stream, char):
-            rv += stream.next() + stream.next()
-        else:
+        escaped = False
+        for c in chars:
+            if EscapeCharToken.starts_here(stream, c):
+                rv += stream.next() + stream.next()
+                escaped = True
+        if not escaped:
             c = stream.next()
-            if c == char: break
+            if c in chars: break
             rv += c
-    return rv
+    return rv, c
 # End: Helper functions  }}}
 
 # Tokens  {{{
@@ -135,7 +152,7 @@ class TabStopToken(Token):
         )
 
 class VisualToken(Token):
-    CHECK = re.compile(r"^\${VISUAL[:}]")
+    CHECK = re.compile(r"^\${VISUAL[:}/]")
 
     @classmethod
     def starts_here(klass, stream):
@@ -147,7 +164,20 @@ class VisualToken(Token):
 
         if stream.peek() == ":":
             stream.next()
-        self.alternative_text = _parse_till_closing_brace(stream)
+        self.alternative_text, c = _parse_till_unescaped_char(stream, '/}')
+        self.alternative_text = unescape(self.alternative_text)
+
+        if c == '/': # Transformation going on
+            try:
+                self.search = _parse_till_unescaped_char(stream, '/')[0]
+                self.replace = _parse_till_unescaped_char(stream, '/')[0]
+                self.options = _parse_till_closing_brace(stream)
+            except StopIteration:
+                raise RuntimeError("Invalid ${VISUAL} transformation! Forgot to escape a '/'?")
+        else:
+            self.search = None
+            self.replace = None
+            self.options = None
 
     def __repr__(self):
         return "VisualToken(%r,%r)" % (
@@ -169,8 +199,8 @@ class TransformationToken(Token):
 
         stream.next() # /
 
-        self.search = _parse_till_unescaped_char(stream, '/')
-        self.replace = _parse_till_unescaped_char(stream, '/')
+        self.search = _parse_till_unescaped_char(stream, '/')[0]
+        self.replace = _parse_till_unescaped_char(stream, '/')[0]
         self.options = _parse_till_closing_brace(stream)
 
     def __repr__(self):
@@ -217,7 +247,7 @@ class ShellCodeToken(Token):
 
     def _parse(self, stream, indent):
         stream.next() # `
-        self.code = _parse_till_unescaped_char(stream, '`')
+        self.code = _parse_till_unescaped_char(stream, '`')[0]
 
     def __repr__(self):
         return "ShellCodeToken(%r,%r,%r)" % (
@@ -237,7 +267,7 @@ class PythonCodeToken(Token):
         if stream.peek() in '\t ':
             stream.next()
 
-        code = _parse_till_unescaped_char(stream, '`')
+        code = _parse_till_unescaped_char(stream, '`')[0]
 
         # Strip the indent if any
         if len(indent):
@@ -264,7 +294,7 @@ class VimLCodeToken(Token):
     def _parse(self, stream, indent):
         for i in range(4):
             stream.next() # `!v
-        self.code = _parse_till_unescaped_char(stream, '`')
+        self.code = _parse_till_unescaped_char(stream, '`')[0]
 
     def __repr__(self):
         return "VimLCodeToken(%r,%r,%r)" % (

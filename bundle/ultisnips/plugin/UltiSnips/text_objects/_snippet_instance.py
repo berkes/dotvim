@@ -71,7 +71,9 @@ class SnippetInstance(EditableTextObject):
                     done.add(obj)
             counter -= 1
         if counter == 0:
-            raise RuntimeError("Cyclic dependency in Snippet definition!")
+            raise RuntimeError("The snippets content did not converge: Check for Cyclic dependencies "
+                "or random strings in your snippet. You can use 'if not snip.c' to make sure "
+                "to only expand random output once.")
 
         vc.to_vim()
         self._del_child(vc)
@@ -86,14 +88,14 @@ class SnippetInstance(EditableTextObject):
             res = self._get_prev_tab(self._cts)
             if res is None:
                 self._cts = cts_bf
-                return self._tabstops[self._cts]
+                return self._tabstops.get(self._cts, None)
             self._cts, ts = res
             return ts
         else:
             res = self._get_next_tab(self._cts)
             if res is None:
                 self._cts = None
-                return self._tabstops[0]
+                return self._tabstops.get(0, None)
             else:
                 self._cts, ts = res
                 return ts
