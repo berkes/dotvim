@@ -39,6 +39,7 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
+map <Leader>nf :NERDTreeFind<CR>
 
 " Tagbar configuration
 map <Leader>f :TagbarToggle<CR>
