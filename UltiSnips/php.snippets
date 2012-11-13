@@ -8,3 +8,49 @@ endsnippet
 snippet iprint "Inline print"
 <?php print ${1:printable} ?>
 endsnippet
+
+###########################################################################
+#                                Functions                                #
+###########################################################################
+snippet function "new Function or Method" !b
+/**
+ * $1 ${3:Does Foo and Bar}
+ *
+ * @scope $2
+ * @returns ${5:Type} $4 ${6:Description of return value}
+ */
+${2:public} function ${1:function_name}() {
+  $4 = new $5();
+
+  ${0}
+
+  return $4;
+}
+endsnippet
+###########################################################################
+#                                   OOP                                   #
+###########################################################################
+snippet setter "setter" !b
+/**
+ * setter for $1
+ * Operates on $this
+ * Returns $this
+ */
+public function set_${1:attribute}($$1) {
+  $this->$1 = $$1;
+  return $this;
+}
+${0}
+endsnippet
+
+snippet getter "getter" !b
+/**
+ * Getter for $1
+ * @return ${2:type} value in $this::$$1.
+ */
+public function ${1}() {
+  return $this->$1;
+}
+${0}
+endsnippet
+
