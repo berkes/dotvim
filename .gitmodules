@@ -19,3 +19,6 @@
 [submodule "bundle/openscad"]
 	path = bundle/openscad
 	url = git@github.com:torrancew/vim-openscad.git
+[submodule "bundle/rails"]
+	path = bundle/rails
+	url = git@github.com:tpope/vim-rails.git
