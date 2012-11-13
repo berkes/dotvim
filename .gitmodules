@@ -1,3 +1,6 @@
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = git@github.com:mileszs/ack.vim.git
+[submodule "bundle/buffet"]
+	path = bundle/buffet
+	url = git@github.com:sandeepcr529/Buffet.vim.git
