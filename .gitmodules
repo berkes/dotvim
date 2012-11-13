@@ -40,3 +40,6 @@
 [submodule "bundle/todotxt"]
 	path = bundle/todotxt
 	url = git@github.com:vim-scripts/todotxt.vim.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
