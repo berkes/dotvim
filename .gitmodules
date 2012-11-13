@@ -10,3 +10,6 @@
 [submodule "bundle/dbgpclient"]
 	path = bundle/dbgpclient
 	url = git@github.com:garyaj/vim-dbgpclient.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
