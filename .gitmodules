@@ -4,3 +4,6 @@
 [submodule "bundle/buffet"]
 	path = bundle/buffet
 	url = git@github.com:sandeepcr529/Buffet.vim.git
+[submodule "bundle/bufkill"]
+	path = bundle/bufkill
+	url = git@github.com:vim-scripts/bufkill.vim.git
