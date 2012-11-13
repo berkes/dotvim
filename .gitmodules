@@ -7,3 +7,6 @@
 [submodule "bundle/bufkill"]
 	path = bundle/bufkill
 	url = git@github.com:vim-scripts/bufkill.vim.git
+[submodule "bundle/dbgpclient"]
+	path = bundle/dbgpclient
+	url = git@github.com:garyaj/vim-dbgpclient.git
