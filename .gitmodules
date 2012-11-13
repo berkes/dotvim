@@ -16,3 +16,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
+[submodule "bundle/openscad"]
+	path = bundle/openscad
+	url = git@github.com:torrancew/vim-openscad.git
