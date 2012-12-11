@@ -90,6 +90,10 @@ au BufRead,BufNewFile *.{module,theme,inc,install,engine,profile,test} set ft=dr
 " scad files are openscad
 au Bufread,BufNewFile *.scad set filetype=openscad
 
+" Allow W, WQ, Wq to work like their lowercase counterparts
+map :W :w
+map :Q :q
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
