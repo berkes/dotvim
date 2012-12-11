@@ -58,3 +58,6 @@
 [submodule "bundle/align"]
 	path = bundle/align
 	url = git@github.com:vim-scripts/Align.git
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = git@github.com:kien/ctrlp.vim.git
