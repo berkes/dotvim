@@ -61,3 +61,6 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = git@github.com:kien/ctrlp.vim.git
+[submodule "bundle/rubytest"]
+	path = bundle/rubytest
+	url = https://github.com/janx/vim-rubytest.git
