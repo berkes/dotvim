@@ -41,6 +41,10 @@ let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>nf :NERDTreeFind<CR>
 
+" CTRL-P Configuration
+" Open new file in curent window (r) instead of default vertical split (v)
+let g:ctrlp_open_new_file = 'r'
+
 " Tagbar configuration
 map <Leader>f :TagbarToggle<CR>
 
