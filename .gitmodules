@@ -64,3 +64,6 @@
 [submodule "bundle/rubytest"]
 	path = bundle/rubytest
 	url = https://github.com/janx/vim-rubytest.git
+[submodule "bundle/gitgutter"]
+	path = bundle/gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
