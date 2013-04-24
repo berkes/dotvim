@@ -58,6 +58,15 @@ map <Leader>rtr :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir
 
 map <C-\> :tnext<CR>
 
+" Relative numbering and toggling thereof
+set relativenumber
+" On focus (we are in Vim) show relative numbering, else show normal numbers
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber
+" Show normal numbering in insert mode
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
 " Remember last location in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
