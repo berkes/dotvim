@@ -68,8 +68,9 @@ set visualbell
 " Start without the toolbar
 set guioptions-=T
 
-" Default gui color scheme
-"color ir_black
+" Default color scheme
+set background=dark
+colorscheme solarized
 
 " Use system clipboard.
 set clipboard=unnamed

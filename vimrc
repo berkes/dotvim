@@ -127,10 +127,6 @@ let g:syntastic_quiet_warnings=1
 set modeline
 set modelines=10
 
-" Default color scheme
-set background=dark
-colorscheme solarized
-
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
 
