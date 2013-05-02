@@ -1,0 +1,27 @@
+###########################################################################
+#                                Grouping                                 #
+###########################################################################
+snippet describe "Describe block" !b
+describe ${1:"${2:Description of block}"} do
+  $0
+end
+endsnippet
+snippet context "Context block" !b
+context ${1:"${2:Description of block}"} do
+  $0
+end
+endsnippet
+snippet it "it block" !b
+it "${1:does a certain thing}" do
+  $0
+end
+endsnippet
+
+###########################################################################
+#                                 Commons                                 #
+###########################################################################
+snippet before "before" !b
+before ${1:${2::each}} do
+  $0
+end
+endsnippet

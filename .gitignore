@@ -1,5 +1,5 @@
 .netrwhist
-spell/nl.utf-8.add
-spell/nl.utf-8.add.spl
 
 *.swp
+*.swo
+spell/*

@@ -1,0 +1,34 @@
+###########################################################################
+#                                2D shapes                                #
+###########################################################################
+snippet circle "2D circle shape"
+circle(r = ${1:radius});
+endsnippet
+
+snippet square "2D square shape"
+square([${1:x},${2:$1}]);
+endsnippet
+
+###########################################################################
+#                                3D shapes                                #
+###########################################################################
+snippet sphere "3D sphere shape"
+sphere(r = ${1:radius});
+endsnippet
+
+snippet cylinder "3D cylinder shape"
+cylinder(h = ${1:height}, r = ${2:radius});
+endsnippet
+
+snippet cube "3D cube shape"
+cube(size = [${1:x}, ${2:y}, ${3:z}]);
+endsnippet
+
+###########################################################################
+#                             Transformations                             #
+###########################################################################
+snippet translate "Translate modifier"
+translate(v = [${1:x}, ${2:y}, ${3:z}]) {
+  ${VISUAL}${4}
+}
+endsnippet

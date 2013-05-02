@@ -1,0 +1,69 @@
+[submodule "bundle/ack"]
+	path = bundle/ack
+	url = git@github.com:mileszs/ack.vim.git
+[submodule "bundle/dbgpclient"]
+	path = bundle/dbgpclient
+	url = git@github.com:garyaj/vim-dbgpclient.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule "bundle/openscad"]
+	path = bundle/openscad
+	url = git@github.com:torrancew/vim-openscad.git
+[submodule "bundle/rails"]
+	path = bundle/rails
+	url = git@github.com:tpope/vim-rails.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = git@github.com:ervandew/supertab.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = git@github.com:scrooloose/syntastic.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = git@github.com:majutsushi/tagbar.git
+[submodule "bundle/textobj-rubyblock"]
+	path = bundle/textobj-rubyblock
+	url = git@github.com:nelstrom/vim-textobj-rubyblock.git
+[submodule "bundle/textobj-user"]
+	path = bundle/textobj-user
+	url = git@github.com:kana/vim-textobj-user.git
+[submodule "bundle/todotxt"]
+	path = bundle/todotxt
+	url = git@github.com:vim-scripts/todotxt.vim.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
+[submodule "bundle/unimpaired"]
+	path = bundle/unimpaired
+	url = git@github.com:tpope/vim-unimpaired.git
+[submodule "bundle/solarized"]
+	path = bundle/solarized
+	url = git@github.com:altercation/vim-colors-solarized.git
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "bundle/liquid"]
+	path = bundle/liquid
+	url = https://github.com/tpope/vim-liquid
+[submodule "bundle/powerline"]
+	path = bundle/powerline
+	url = git@github.com:Lokaltog/vim-powerline.git
+[submodule "bundle/align"]
+	path = bundle/align
+	url = git@github.com:vim-scripts/Align.git
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule "bundle/rubytest"]
+	path = bundle/rubytest
+	url = https://github.com/janx/vim-rubytest.git
+[submodule "bundle/gitgutter"]
+	path = bundle/gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "bundle/matchit"]
+	path = bundle/matchit
+	url = git://github.com/tsaleh/vim-matchit.git

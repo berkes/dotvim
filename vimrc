@@ -39,12 +39,15 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
+map <Leader>nf :NERDTreeFind<CR>
+
+" CTRL-P Configuration
+" Open new file in curent window (r) instead of default vertical split (v)
+let g:ctrlp_open_new_file = 'r'
+map <Leader>b :CtrlPBuffer<CR>
 
 " Tagbar configuration
 map <Leader>f :TagbarToggle<CR>
-
-" Command-T configuration
-let g:CommandTMaxHeight=20
 
 " ZoomWin configuration
 map <Leader><Leader> :ZoomWin<CR>
@@ -54,6 +57,15 @@ map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <Leader>rtr :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
 
 map <C-\> :tnext<CR>
+
+" Relative numbering and toggling thereof
+set relativenumber
+" On focus (we are in Vim) show relative numbering, else show normal numbers
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber
+" Show normal numbering in insert mode
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 
 " Remember last location in file
 if has("autocmd")
@@ -86,26 +98,18 @@ au BufRead,BufNewFile *.txt call s:setupWrapping()
 " drupalfiles are PHP
 au BufRead,BufNewFile *.{module,theme,inc,install,engine,profile,test} set ft=drupal.php
 
+" scad files are openscad
+au Bufread,BufNewFile *.scad set filetype=openscad
+
+" Allow W, WQ, Wq to work like their lowercase counterparts
+map :W :w
+map :Q :q
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
 " load the plugin and indent settings for the detected filetype
 filetype plugin indent on
-
-" Opens buffet bufferlist.
-map <Leader>bl :Bufferlist<CR>
-
-" Opens an edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>e
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
-" Opens a tab edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>t
-map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
-" Inserts the path of the currently edited file into a command
-" Command mode: Ctrl+P
-cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Unimpaired configuration
 " Bubble single lines
@@ -119,26 +123,16 @@ vmap <C-Down> ]egv
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
 
-" gist-vim defaults
-if has("mac")
-  let g:gist_clip_command = 'pbcopy'
-elseif has("unix")
-  let g:gist_clip_command = 'xclip -selection clipboard'
-endif
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-
 " Use modeline overrides
 set modeline
 set modelines=10
 
-" Default color scheme
-set background=dark
-colorscheme solarized
-
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
 
+" Rubytest settings
+let g:rubytest_cmd_feature = "cucumber --no-color %p"
+let g:rubytest_cmd_story = "cucumber --no-color %p -n '%c'"
 
 " Directories for swp files
 set backupdir=~/.vim
