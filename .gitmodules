@@ -1,9 +1,6 @@
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = git@github.com:mileszs/ack.vim.git
-[submodule "bundle/dbgpclient"]
-	path = bundle/dbgpclient
-	url = git@github.com:garyaj/vim-dbgpclient.git
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = git@github.com:scrooloose/nerdcommenter.git
