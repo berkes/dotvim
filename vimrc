@@ -49,9 +49,6 @@ map <Leader>b :CtrlPBuffer<CR>
 " Tagbar configuration
 map <Leader>f :TagbarToggle<CR>
 
-" ZoomWin configuration
-map <Leader><Leader> :ZoomWin<CR>
-
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <Leader>rtr :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
@@ -94,7 +91,6 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 au BufNewFile,BufRead *.json set ft=javascript
 
 au BufRead,BufNewFile *.txt call s:setupWrapping()
-
 " drupalfiles are PHP
 au BufRead,BufNewFile *.{module,theme,inc,install,engine,profile,test} set ft=drupal.php
 
@@ -104,6 +100,10 @@ au Bufread,BufNewFile *.scad set filetype=openscad
 " Allow W, WQ, Wq to work like their lowercase counterparts
 map :W :w
 map :Q :q
+map :B :b
+
+" delete a buffer without closing its window
+nnoremap <C-c> :bp\|bd #<CR>
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
