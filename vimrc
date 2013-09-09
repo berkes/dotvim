@@ -49,9 +49,6 @@ map <Leader>b :CtrlPBuffer<CR>
 " Tagbar configuration
 map <Leader>f :TagbarToggle<CR>
 
-" ZoomWin configuration
-map <Leader><Leader> :ZoomWin<CR>
-
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <Leader>rtr :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
@@ -84,17 +81,25 @@ function s:setupMarkup()
   map <buffer> <Leader>p :Hammer<CR>
 endfunction
 
+" load the plugin and indent settings for the detected filetype
+filetype plugin indent on
+
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
 
 " md, markdown, and mk are markdown and define buffer-local preview
+au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn
+      \ if &ft =~# '^\%(conf\|modula2\)$' |
+      \ set ft=markdown |
+      \ else |
+      \ setf markdown |
+      \ endif
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
 au BufRead,BufNewFile *.txt call s:setupWrapping()
-
 " drupalfiles are PHP
 au BufRead,BufNewFile *.{module,theme,inc,install,engine,profile,test} set ft=drupal.php
 
@@ -104,12 +109,13 @@ au Bufread,BufNewFile *.scad set filetype=openscad
 " Allow W, WQ, Wq to work like their lowercase counterparts
 map :W :w
 map :Q :q
+map :B :b
+
+" delete a buffer without closing its window
+nnoremap <C-c> :bp\|bd #<CR>
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-
-" load the plugin and indent settings for the detected filetype
-filetype plugin indent on
 
 " Unimpaired configuration
 " Bubble single lines

@@ -1,9 +1,6 @@
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = git@github.com:mileszs/ack.vim.git
-[submodule "bundle/dbgpclient"]
-	path = bundle/dbgpclient
-	url = git@github.com:garyaj/vim-dbgpclient.git
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = git@github.com:scrooloose/nerdcommenter.git
@@ -67,3 +64,12 @@
 [submodule "bundle/matchit"]
 	path = bundle/matchit
 	url = git://github.com/tsaleh/vim-matchit.git
+[submodule "bundle/surround"]
+	path = bundle/surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "bundle/vim-rails"]
+	path = bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "bundle/fontzoom"]
+	path = bundle/fontzoom
+	url = https://github.com/thinca/vim-fontzoom.git
