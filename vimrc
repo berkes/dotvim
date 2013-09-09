@@ -81,10 +81,19 @@ function s:setupMarkup()
   map <buffer> <Leader>p :Hammer<CR>
 endfunction
 
+" load the plugin and indent settings for the detected filetype
+filetype plugin indent on
+
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
 
 " md, markdown, and mk are markdown and define buffer-local preview
+au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn
+      \ if &ft =~# '^\%(conf\|modula2\)$' |
+      \ set ft=markdown |
+      \ else |
+      \ setf markdown |
+      \ endif
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
 " add json syntax highlighting
@@ -107,9 +116,6 @@ nnoremap <C-c> :bp\|bd #<CR>
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-
-" load the plugin and indent settings for the detected filetype
-filetype plugin indent on
 
 " Unimpaired configuration
 " Bubble single lines
