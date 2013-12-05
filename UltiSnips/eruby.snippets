@@ -21,6 +21,12 @@ endsnippet
 ###########################################################################
 #                                   ERB                                   #
 ###########################################################################
-snippet erb "ERB print tag" !b
+snippet erb "ERB print tag"
 <%= ${VISUAL}$0 %>
+endsnippet
+###########################################################################
+#                           CMSIMPLE / MERCURY                            #
+###########################################################################
+snippet region "render_region block"
+<%= render_region :${1:region_name} do %>${VISUAL}$0<% end -%>
 endsnippet
