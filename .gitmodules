@@ -73,3 +73,6 @@
 [submodule "bundle/fontzoom"]
 	path = bundle/fontzoom
 	url = https://github.com/thinca/vim-fontzoom.git
+[submodule "bundle/investigate"]
+	path = bundle/investigate
+	url = https://github.com/Keithbsmiley/investigate.vim.git
