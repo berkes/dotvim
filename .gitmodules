@@ -73,3 +73,6 @@
 [submodule "bundle/investigate"]
 	path = bundle/investigate
 	url = https://github.com/Keithbsmiley/investigate.vim.git
+[submodule "bundle/ag"]
+	path = bundle/ag
+	url = https://github.com/vim-scripts/ag.vim.git
