@@ -55,6 +55,9 @@ map <Leader>rtr :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir
 
 map <C-\> :tnext<CR>
 
+" Investigate Documentation
+nnoremap K :call investigate#Investigate()<cr>
+
 " Relative numbering and toggling thereof
 set relativenumber
 " On focus (we are in Vim) show relative numbering, else show normal numbers
