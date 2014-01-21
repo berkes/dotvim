@@ -139,10 +139,6 @@ set modelines=10
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
 
-" Rubytest settings
-let g:rubytest_cmd_feature = "cucumber --no-color %p"
-let g:rubytest_cmd_story = "cucumber --no-color %p -n '%c'"
-
 " Directories for swp files
 set backupdir=~/.vim
 set dir=~/.vim
