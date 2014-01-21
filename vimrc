@@ -120,14 +120,6 @@ nnoremap <C-c> :bp\|bd #<CR>
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" Unimpaired configuration
-" Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
-" Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
