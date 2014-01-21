@@ -75,7 +75,7 @@ colorscheme solarized
 " Use system clipboard.
 set clipboard=unnamed
 
-set guifont=Ubuntu\ Mono\ 12
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
 
 " ConqueTerm wrapper
 function StartTerm()
