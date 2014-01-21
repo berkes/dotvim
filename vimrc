@@ -99,9 +99,6 @@ au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn
       \ endif
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
-" add json syntax highlighting
-au BufNewFile,BufRead *.json set ft=javascript
-
 au BufRead,BufNewFile *.txt call s:setupWrapping()
 " drupalfiles are PHP
 au BufRead,BufNewFile *.{module,theme,inc,install,engine,profile,test} set ft=drupal.php
