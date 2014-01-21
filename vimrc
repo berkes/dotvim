@@ -144,5 +144,8 @@ set dir=~/.vim
 " Allow switching between buffers, even if they have changes.·
 set hidden
 
+" Airline Vim Symbol fonts
+let g:airline_powerline_fonts = 1
+
 " allow the . to execute once for each line of a visual selection
 vnoremap . :normal .<CR>
