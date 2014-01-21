@@ -75,7 +75,9 @@ colorscheme solarized
 " Use system clipboard.
 set clipboard=unnamed
 
+" Airline Vim Symbol fonts
 set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+let g:airline_powerline_fonts = 1
 
 " ConqueTerm wrapper
 function StartTerm()

@@ -136,9 +136,6 @@ let g:syntastic_quiet_warnings=1
 set modeline
 set modelines=10
 
-" Airline Vim Symbol fonts
-let g:airline_powerline_fonts = 1
-
 " Directories for swp files
 set backupdir=~/.vim
 set dir=~/.vim
