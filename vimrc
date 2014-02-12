@@ -106,6 +106,9 @@ au BufRead,BufNewFile *.{module,theme,inc,install,engine,profile,test} set ft=dr
 " scad files are openscad
 au Bufread,BufNewFile *.scad set filetype=openscad
 
+" json must not use autohide
+let g:vim_json_syntax_conceal = 0
+
 " Allow W, WQ, Wq to work like their lowercase counterparts
 map :W :w
 map :Q :q
