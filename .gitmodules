@@ -79,3 +79,6 @@
 [submodule "bundle/json"]
 	path = bundle/json
 	url = https://github.com/elzr/vim-json.git
+[submodule "bundle/atp-vim"]
+	path = bundle/atp-vim
+	url = https://github.com/coot/atp_vim.git
