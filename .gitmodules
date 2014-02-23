@@ -82,3 +82,6 @@
 [submodule "bundle/atp-vim"]
 	path = bundle/atp-vim
 	url = https://github.com/coot/atp_vim.git
+[submodule "bundle/neocomplete"]
+	path = bundle/neocomplete
+	url = https://github.com/Shougo/neocomplete.vim.git
