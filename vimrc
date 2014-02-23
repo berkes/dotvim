@@ -99,15 +99,15 @@ au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn
       \ endif
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
-" add json syntax highlighting
-au BufNewFile,BufRead *.json set ft=javascript
-
 au BufRead,BufNewFile *.txt call s:setupWrapping()
 " drupalfiles are PHP
 au BufRead,BufNewFile *.{module,theme,inc,install,engine,profile,test} set ft=drupal.php
 
 " scad files are openscad
 au Bufread,BufNewFile *.scad set filetype=openscad
+
+" json must not use autohide
+let g:vim_json_syntax_conceal = 0
 
 " Allow W, WQ, Wq to work like their lowercase counterparts
 map :W :w
@@ -120,14 +120,6 @@ nnoremap <C-c> :bp\|bd #<CR>
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" Unimpaired configuration
-" Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
-" Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
@@ -136,13 +128,6 @@ let g:syntastic_quiet_warnings=1
 set modeline
 set modelines=10
 
-" Powerline settings
-let g:Powerline_symbols = 'fancy'
-
-" Rubytest settings
-let g:rubytest_cmd_feature = "cucumber --no-color %p"
-let g:rubytest_cmd_story = "cucumber --no-color %p -n '%c'"
-
 " Directories for swp files
 set backupdir=~/.vim
 set dir=~/.vim
@@ -150,6 +135,9 @@ set dir=~/.vim
 " Buffer management
 " Allow switching between buffers, even if they have changes.·
 set hidden
+
+" Airline Vim Symbol fonts
+let g:airline_powerline_fonts = 1
 
 " allow the . to execute once for each line of a visual selection
 vnoremap . :normal .<CR>
