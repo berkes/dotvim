@@ -70,7 +70,7 @@ set guioptions-=T
 
 " Default color scheme
 set background=dark
-colorscheme solarized
+colorscheme molokai
 
 " Use system clipboard.
 set clipboard=unnamed
