@@ -43,7 +43,7 @@ map <Leader>nf :NERDTreeFind<CR>
 " CTRL-P Configuration
 " Open new file in curent window (r) instead of default vertical split (v)
 let g:ctrlp_open_new_file = 'r'
-map <Leader>b :CtrlPBuffer<CR>
+map <Leader>p :CtrlP<CR>
 
 " Neocomplete configuration
 " Disable AutoComplPop.
