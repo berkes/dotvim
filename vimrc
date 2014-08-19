@@ -24,6 +24,10 @@ set incsearch
 set ignorecase
 set smartcase
 
+" Generic ignore for generated Rails Doc
+" e.g. ctrp-p will use this when searching for files
+set wildignore+=*/doc/*
+
 " Status bar
 set laststatus=2
 
