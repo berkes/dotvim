@@ -1,3 +1,14 @@
+################################################################################
+# Active Record
+################################################################################
+
+snippet model
+  ##
+  # $1
+  #
+  class ${1:#:Name} < ActiveRecord::Base
+    ${0}
+  end
 
 ################################################################################
 # RDOC
@@ -5,3 +16,31 @@
 
 snippet nodoc
    # :nodoc:
+
+
+################################################################################
+# RSPEC
+################################################################################
+
+snippet expresp
+  expect(response).to
+
+snippet modelspec
+  require 'rails_helper'
+
+  describe ${1:#:Name}, type: :model do
+    ${0}
+  end
+
+snippet describe
+  describe '${1:#:the subject}' do
+    ${0}
+  end
+
+snippet context
+  context '${1:#:the context}' do
+    before do
+      ${0}
+    end
+  end
+
