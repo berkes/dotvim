@@ -83,6 +83,11 @@ map <C-\> :tnext<CR>
 " Investigate Documentation
 nnoremap K :call investigate#Investigate()<cr>
 
+" vimtest configuration
+let g:rubytest_in_quickfix = 1
+let g:rubytest_cmd_spec = "rspec %p"
+let g:rubytest_cmd_example = "rspec %p:%c"
+
 " Relative numbering and toggling thereof
 set relativenumber
 " On focus (we are in Vim) show relative numbering, else show normal numbers
