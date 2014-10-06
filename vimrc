@@ -59,6 +59,16 @@ let g:neocomplete#enable_smart_case = 1
 " incompatibityfix with vim-rails: https://github.com/tpope/vim-rails/issues/283
 let g:neocomplete#force_overwrite_completefunc = 1
 
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  " For no inserting <CR> key.
+  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 " Snippet Configuration
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
