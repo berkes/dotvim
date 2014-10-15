@@ -15,8 +15,9 @@ if has("gui_macvim")
   imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
 endif
 
-" Don't beep
+" Don't beep, don't flash
 set visualbell
+autocmd VimEnter * set vb t_vb=
 
 " Start without the toolbar
 set guioptions-=T
