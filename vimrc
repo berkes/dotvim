@@ -39,11 +39,6 @@ set noequalalways
 " Leader
 let mapleader="\<Space>"
 
-" NERDTree configuration
-let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
-map <Leader>n :NERDTreeToggle<CR>
-map <Leader>nf :NERDTreeFind<CR>
-
 " CTRL-P Configuration
 " Open new file in curent window (r) instead of default vertical split (v)
 let g:ctrlp_cache_dir = '/tmp'
