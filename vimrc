@@ -3,6 +3,61 @@ call pathogen#infect()
 
 set nocompatible
 
+" Set filetype off for the vundle part.
+" It will be enabled below.
+" See http://stackoverflow.com/a/17045575/73673
+filetype off
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Powerline, Lightweight
+Plugin 'bling/vim-airline'
+
+" CtrlP
+Plugin 'kien/ctrlp.vim'
+
+" Vinegar, file and disk browsing, nerdtree alternative
+Plugin 'tpope/vim-vinegar'
+
+" Ag, Silver Searcher
+Plugin 'vim-scripts/ag.vim'
+
+" Neocomplete, with snippets
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'honza/vim-snippets'
+
+" Simple commenting and uncommenting
+Plugin 'scrooloose/nerdcommenter'
+
+" Surround, matching pairs.
+Plugin 'tpope/vim-surround'
+
+"" Ruby and Rails helpers
+" Rails helpers
+Plugin 'tpope/vim-rails'
+" Ruby Blocks, requires textobj-user
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+
+" Syntax Checking
+Plugin 'scrooloose/syntastic'
+
+"" Filetype Support
+" OpenScad
+Plugin 'torrancew/vim-openscad'
+" Todotxt
+Plugin 'vim-scripts/todotxt.vim'
+" Slim template language
+Plugin 'slim-template/vim-slim'
+" JSON
+Plugin 'elzr/vim-json'
+
+
 set number
 set ruler
 syntax on
