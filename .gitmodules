@@ -1,18 +1,12 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = git@github.com:scrooloose/nerdcommenter.git
-[submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
 [submodule "bundle/openscad"]
 	path = bundle/openscad
 	url = git@github.com:torrancew/vim-openscad.git
 [submodule "bundle/rails"]
 	path = bundle/rails
 	url = git@github.com:tpope/vim-rails.git
-[submodule "bundle/supertab"]
-	path = bundle/supertab
-	url = git@github.com:ervandew/supertab.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = git@github.com:scrooloose/syntastic.git
@@ -52,9 +46,6 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = git@github.com:kien/ctrlp.vim.git
-[submodule "bundle/gitgutter"]
-	path = bundle/gitgutter
-	url = git://github.com/airblade/vim-gitgutter.git
 [submodule "bundle/matchit"]
 	path = bundle/matchit
 	url = git://github.com/tsaleh/vim-matchit.git
@@ -64,9 +55,6 @@
 [submodule "bundle/vim-rails"]
 	path = bundle/vim-rails
 	url = https://github.com/tpope/vim-rails.git
-[submodule "bundle/fontzoom"]
-	path = bundle/fontzoom
-	url = https://github.com/thinca/vim-fontzoom.git
 [submodule "bundle/investigate"]
 	path = bundle/investigate
 	url = https://github.com/Keithbsmiley/investigate.vim.git
@@ -79,6 +67,24 @@
 [submodule "bundle/json"]
 	path = bundle/json
 	url = https://github.com/elzr/vim-json.git
-[submodule "bundle/atp-vim"]
-	path = bundle/atp-vim
-	url = https://github.com/coot/atp_vim.git
+[submodule "bundle/neocomplete"]
+	path = bundle/neocomplete
+	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule "bundle/neosnippet"]
+	path = bundle/neosnippet
+	url = https://github.com/Shougo/neosnippet.vim
+[submodule "bundle/vim-snippets"]
+	path = bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
+[submodule "bundle/molokai"]
+	path = bundle/molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule "bundle/rubytest"]
+	path = bundle/rubytest
+	url = git@github.com:janx/vim-rubytest.git
+[submodule "bundle/slim"]
+	path = bundle/slim
+	url = git://github.com/slim-template/vim-slim.git
+[submodule "bundle/vinegar"]
+	path = bundle/vinegar
+	url = git://github.com/tpope/vim-vinegar.git

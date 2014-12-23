@@ -24,9 +24,9 @@ set incsearch
 set ignorecase
 set smartcase
 
-" Tab completion
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+" Generic ignore for generated Rails Doc
+" e.g. ctrp-p will use this when searching for files
+set wildignore+=*/doc/*
 
 " Status bar
 set laststatus=2
@@ -36,15 +36,47 @@ set laststatus=2
 " This is likely a bludgeon to solve some other issue, but it works
 set noequalalways
 
-" NERDTree configuration
-let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
-map <Leader>n :NERDTreeToggle<CR>
-map <Leader>nf :NERDTreeFind<CR>
+" Leader
+let mapleader="\<Space>"
 
 " CTRL-P Configuration
 " Open new file in curent window (r) instead of default vertical split (v)
+let g:ctrlp_cache_dir = '/tmp'
+let g:ctrlp_use_caching = 1
 let g:ctrlp_open_new_file = 'r'
-map <Leader>b :CtrlPBuffer<CR>
+map <Leader>p :CtrlP<CR>
+
+" Neocomplete configuration
+" Disable AutoComplPop.
+ let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" incompatibityfix with vim-rails: https://github.com/tpope/vim-rails/issues/283
+let g:neocomplete#force_overwrite_completefunc = 1
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  " For no inserting <CR> key.
+  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Snippet Configuration
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" Enable snipMate compatibility feature.
+let g:neosnippet#disable_runtime_snippets = { "_": 1, }
+
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets,~/.vim/snippets'
 
 " Tagbar configuration
 map <Leader>f :TagbarToggle<CR>
@@ -57,6 +89,11 @@ map <C-\> :tnext<CR>
 
 " Investigate Documentation
 nnoremap K :call investigate#Investigate()<cr>
+
+" vimtest configuration
+let g:rubytest_in_quickfix = 1
+let g:rubytest_cmd_spec = "rspec %p"
+let g:rubytest_cmd_example = "rspec %p:%c"
 
 " Relative numbering and toggling thereof
 set relativenumber
