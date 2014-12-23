@@ -47,6 +47,9 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 " Syntax Checking
 Plugin 'scrooloose/syntastic'
 
+" Git wrapper
+Plugin 'tpope/vim-fugitive'
+
 "" Filetype Support
 " OpenScad
 Plugin 'torrancew/vim-openscad'
