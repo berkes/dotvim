@@ -34,6 +34,9 @@ Plugin 'honza/vim-snippets'
 " Simple commenting and uncommenting
 Plugin 'scrooloose/nerdcommenter'
 
+" Align
+Plugin 'junegunn/vim-easy-align'
+
 " Surround, matching pairs.
 Plugin 'tpope/vim-surround'
 
