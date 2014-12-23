@@ -88,3 +88,6 @@
 [submodule "bundle/vinegar"]
 	path = bundle/vinegar
 	url = git://github.com/tpope/vim-vinegar.git
+[submodule "/home/ber/.vim/bundle/Vundle.vim"]
+	path = /home/ber/.vim/bundle/Vundle.vim
+	url = https://github.com/gmarik/Vundle.vim.git
