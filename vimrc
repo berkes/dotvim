@@ -57,6 +57,9 @@ Plugin 'slim-template/vim-slim'
 " JSON
 Plugin 'elzr/vim-json'
 
+"" Colorschemes
+" molokai
+Plugin 'tomasr/molokai'
 
 set number
 set ruler
