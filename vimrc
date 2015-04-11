@@ -44,8 +44,10 @@ Plugin 'tpope/vim-surround'
 " Rails helpers
 Plugin 'tpope/vim-rails'
 " Ruby Blocks, requires textobj-user
+Plugin 'edsono/vim-matchit'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'vim-ruby/vim-ruby'
 
 " Syntax Checking
 Plugin 'scrooloose/syntastic'
