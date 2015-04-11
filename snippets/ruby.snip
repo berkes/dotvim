@@ -44,3 +44,5 @@ snippet context
     end
   end
 
+snippet bef_stub
+  before { allow(${1:subject}).to receive(:${2:message}).and_return ${3:return} }
