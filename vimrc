@@ -71,6 +71,7 @@ Plugin 'tomasr/molokai'
 
 set number
 set ruler
+set colorcolumn=80
 syntax on
 
 " Set encoding
