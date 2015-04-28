@@ -154,9 +154,6 @@ map <Leader>rtr :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir
 
 map <C-\> :tnext<CR>
 
-" Investigate Documentation
-nnoremap K :call investigate#Investigate()<cr>
-
 " vimtest configuration
 let g:rubytest_in_quickfix = 1
 let g:rubytest_cmd_spec = "rspec %p"
