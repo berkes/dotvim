@@ -215,9 +215,6 @@ map :W :w
 map :Q :q
 map :B :b
 
-" delete a buffer without closing its window
-nnoremap <C-c> :bp\|bd #<CR>
-
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
