@@ -23,6 +23,9 @@ Plugin 'kien/ctrlp.vim'
 " Vinegar, file and disk browsing, nerdtree alternative
 Plugin 'tpope/vim-vinegar'
 
+" Vim-tags: enhance tags support for a.o. Gemfile support.
+Plugin 'szw/vim-tags'
+
 " Ag, Silver Searcher
 Plugin 'vim-scripts/ag.vim'
 
@@ -149,8 +152,8 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets,~/.vim/
 map <Leader>f :TagbarToggle<CR>
 
 " CTags
-map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
-map <Leader>rtr :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
+"map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+"map <Leader>rtr :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
 
 map <C-\> :tnext<CR>
 
