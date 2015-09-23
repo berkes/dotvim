@@ -183,11 +183,6 @@ function s:setupWrapping()
   set textwidth=72
 endfunction
 
-function s:setupMarkup()
-  call s:setupWrapping()
-  map <buffer> <Leader>p :Hammer<CR>
-endfunction
-
 " load the plugin and indent settings for the detected filetype
 filetype plugin indent on
 
