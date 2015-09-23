@@ -230,7 +230,7 @@ set dir=~/.vim
 
 " Buffer management
 " Allow switching between buffers, even if they have changes.·
-set hidden
+" set hidden
 
 " Airline Vim Symbol fonts
 let g:airline_powerline_fonts = 1
