@@ -148,20 +148,6 @@ let g:neosnippet#disable_runtime_snippets = { "_": 1, }
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets,~/.vim/snippets'
 
-" Tagbar configuration
-map <Leader>f :TagbarToggle<CR>
-
-" CTags
-"map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
-"map <Leader>rtr :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
-
-map <C-\> :tnext<CR>
-
-" vimtest configuration
-let g:rubytest_in_quickfix = 1
-let g:rubytest_cmd_spec = "rspec %p"
-let g:rubytest_cmd_example = "rspec %p:%c"
-
 " Relative numbering and toggling thereof
 set relativenumber
 " On focus (we are in Vim) show relative numbering, else show normal numbers
@@ -189,16 +175,15 @@ filetype plugin indent on
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
 
-" md, markdown, and mk are markdown and define buffer-local preview
+" md, markdown, and mk are markdown
 au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn
       \ if &ft =~# '^\%(conf\|modula2\)$' |
       \ set ft=markdown |
       \ else |
       \ setf markdown |
       \ endif
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
-
 au BufRead,BufNewFile *.txt call s:setupWrapping()
+
 " drupalfiles are PHP
 au BufRead,BufNewFile *.{module,theme,inc,install,engine,profile,test} set ft=drupal.php
 

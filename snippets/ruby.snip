@@ -49,3 +49,14 @@ snippet bef_stub
 
 snippet stub
   allow(${1:subject}).to receive(:${2:find}).and_return ${3:return}
+
+################################################################################
+# Minitest
+################################################################################
+
+snippet testmodel
+  require "test_helper"
+
+  class ${1:#:Name}Test < ActiveSupport::TestCase
+    ${0}
+  end
