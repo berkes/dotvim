@@ -198,6 +198,9 @@ map :W :w
 map :Q :q
 map :B :b
 
+" a quick command to store as sudo.
+cabbr sandwich w !sudo tee %
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
