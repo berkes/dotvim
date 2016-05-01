@@ -1,4 +1,25 @@
 ################################################################################
+# Ruby
+################################################################################
+
+snippet defml
+  def ${1:#:method_name}
+    return @$1 if @$1
+    @$1 = ${0}
+  end
+
+snippet defms
+  def ${1:#:method_name}
+    @$1 ||= ${0}
+  end
+
+snippet box
+  ################################################################################
+  # ${1:Header}
+  ################################################################################
+
+
+################################################################################
 # Active Record
 ################################################################################
 
@@ -60,3 +81,42 @@ snippet testmodel
   class ${1:#:Name}Test < ActiveSupport::TestCase
     ${0}
   end
+
+snippet testintegrationapi
+  require "test_helper"
+
+  ##
+  # As a ...
+  # When I ...
+  # And I ...
+  # Then ....
+  # So that I ...
+  class Api${1:#:Name}Test < ActionDispatch::ApiIntegrationTest
+    ${0}
+  end
+
+snippet testintegrationweb
+  require "test_helper"
+
+  ##
+  # As a ...
+  # When I ...
+  # And I ...
+  # Then ....
+  # So that I ...
+  class Web${1:#:Name}Test < BrowserIntegrationTest
+    ${0}
+  end
+
+snippet testcontrollerapi
+  require "test_helper"
+
+  class Api::${1:#:Name}Test < ActionController::ApiTestCase
+    ${0}
+  end
+
+################################################################################
+# RubyBlocks Swagger doc
+################################################################################
+snippet key
+  key :${1:name}, "${2:value}"
