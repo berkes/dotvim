@@ -96,7 +96,7 @@ set smartcase
 
 " Generic ignore for generated Rails Doc
 " e.g. ctrp-p will use this when searching for files
-set wildignore+=*/doc/*
+set wildignore+=*/doc/*,*/tmp/*,*/vendor/*,*/node_modules/*
 
 " Status bar
 set laststatus=2
