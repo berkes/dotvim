@@ -40,7 +40,7 @@ snippet nodoc
 
 
 ################################################################################
-# RSPEC
+# SPEC
 ################################################################################
 
 snippet expresp
@@ -54,7 +54,7 @@ snippet modelspec
   end
 
 snippet describe
-  describe '${1:#:the subject}' do
+  describe "${1:#:the subject}" do
     ${0}
   end
 
@@ -80,6 +80,12 @@ snippet testmodel
 
   class ${1:#:Name}Test < ActiveSupport::TestCase
     ${0}
+
+    private
+
+    def subject
+      @subject ||= $1.new
+    end
   end
 
 snippet testintegrationapi
