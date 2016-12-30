@@ -67,6 +67,8 @@ Plugin 'vim-scripts/todotxt.vim'
 Plugin 'slim-template/vim-slim'
 " JSON
 Plugin 'elzr/vim-json'
+" Markdown
+Plugin 'plasticboy/vim-markdown'
 
 "" Colorschemes
 Plugin 'jacoborus/tender'
@@ -180,7 +182,9 @@ au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn
       \ set ft=markdown |
       \ else |
       \ setf markdown |
-      \ endif
+      \ endif|
+      \ call s:setupWrapping()
+
 au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " drupalfiles are PHP
