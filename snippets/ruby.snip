@@ -68,9 +68,6 @@ snippet context
 snippet bef_stub
   before { allow(${1:subject}).to receive(:${2:message}).and_return ${3:return} }
 
-snippet stub
-  allow(${1:subject}).to receive(:${2:find}).and_return ${3:return}
-
 ################################################################################
 # Minitest
 ################################################################################
@@ -119,6 +116,11 @@ snippet testcontrollerapi
 
   class Api::${1:#:Name}Test < ActionController::ApiTestCase
     ${0}
+  end
+
+snippet stub
+  def ${1:#:stub_name}
+    @$1 ||= stub("${0}")
   end
 
 ################################################################################
