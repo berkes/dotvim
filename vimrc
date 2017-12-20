@@ -69,6 +69,8 @@ Plugin 'slim-template/vim-slim'
 Plugin 'elzr/vim-json'
 " Markdown
 Plugin 'plasticboy/vim-markdown'
+" Solitidy
+Plugin 'ethereum/vim-solidity'
 
 "" Colorschemes
 Plugin 'jacoborus/tender'
