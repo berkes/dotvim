@@ -229,7 +229,7 @@ set dir=~/.vim
 " Allow switching between buffers, even if they have changes.·
 set hidden
 " Add a shortcut for closing a buffer without closing the window.
-map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>.
+map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
 " Airline Vim Symbol fonts
 let g:airline_powerline_fonts = 1
