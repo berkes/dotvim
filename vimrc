@@ -47,7 +47,6 @@ Plugin 'tpope/vim-surround'
 " Rails helpers
 Plugin 'tpope/vim-rails'
 " Ruby Blocks, requires textobj-user
-Plugin 'edsono/vim-matchit'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-ruby/vim-ruby'
@@ -70,7 +69,7 @@ Plugin 'elzr/vim-json'
 " Markdown
 Plugin 'plasticboy/vim-markdown'
 " Solitidy
-Plugin 'ethereum/vim-solidity'
+Plugin 'tomlion/vim-solidity'
 
 "" Colorschemes
 Plugin 'jacoborus/tender'
