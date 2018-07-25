@@ -175,8 +175,8 @@ endfunction
 " load the plugin and indent settings for the detected filetype
 filetype plugin indent on
 
-" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+" Kiba etl, Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru,*.etl} set ft=ruby
 
 " md, markdown, and mk are markdown
 au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn
