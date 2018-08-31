@@ -213,8 +213,6 @@ set backspace=indent,eol,start
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_messages= {'level': 'warnings'}
-let g:syntastic_javascript_checkers=['closurecompiler']
-let g:syntastic_javascript_closurecompiler_script='/usr/bin/closure-compiler'
 
 " Use modeline overrides
 set modeline
