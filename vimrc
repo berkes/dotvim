@@ -70,6 +70,8 @@ Plugin 'elzr/vim-json'
 Plugin 'plasticboy/vim-markdown'
 " Solitidy
 Plugin 'tomlion/vim-solidity'
+" Vue
+Plugin 'posva/vim-vue'
 
 "" Colorschemes
 Plugin 'jacoborus/tender'
