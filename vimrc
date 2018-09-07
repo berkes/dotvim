@@ -215,6 +215,8 @@ set backspace=indent,eol,start
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_messages= {'level': 'warnings'}
+" Syntastic JS
+let g:syntastic_javascript_checkers=['jshint']
 
 " Use modeline overrides
 set modeline
