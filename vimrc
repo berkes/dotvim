@@ -188,7 +188,7 @@ au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn
       \ endif|
       \ call s:setupWrapping()
 " vim-markdown default folds at level 1. We want all headers to show.
-let g:vim_markdown_folding_level = 6
+let g:vim_markdown_folding_disabled = 1
 
 au BufRead,BufNewFile *.txt call s:setupWrapping()
 
