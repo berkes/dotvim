@@ -17,9 +17,6 @@ Plugin 'gmarik/Vundle.vim'
 " Powerline, Lightweight
 Plugin 'bling/vim-airline'
 
-" CtrlP
-Plugin 'kien/ctrlp.vim'
-
 " Vinegar, file and disk browsing, nerdtree alternative
 Plugin 'tpope/vim-vinegar'
 
@@ -113,13 +110,6 @@ set noequalalways
 " Leader
 let mapleader="\<Space>"
 
-" CTRL-P Configuration
-" Open new file in curent window (r) instead of default vertical split (v)
-let g:ctrlp_cache_dir = '/tmp'
-let g:ctrlp_use_caching = 1
-let g:ctrlp_open_new_file = 'r'
-map <Leader>p :CtrlP<CR>
-
 " Neocomplete configuration
 " Disable AutoComplPop.
  let g:acp_enableAtStartup = 0
@@ -172,6 +162,12 @@ function s:setupWrapping()
   set wrapmargin=2
   set textwidth=72
 endfunction
+
+" Install FZF
+" https://github.com/junegunn/fzf#installation
+set rtp+=~/.fzf/
+" Bind FZF to CTRL-P
+map <C-p> :FZF<CR>
 
 " load the plugin and indent settings for the detected filetype
 filetype plugin indent on
