@@ -3,6 +3,9 @@ call pathogen#infect()
 
 set nocompatible
 
+" Enable matchit
+runtime macros/matchit.vim
+
 " Set filetype off for the vundle part.
 " It will be enabled below.
 " See http://stackoverflow.com/a/17045575/73673
@@ -44,8 +47,8 @@ Plugin 'tpope/vim-surround'
 " Rails helpers
 Plugin 'tpope/vim-rails'
 " Ruby Blocks, requires textobj-user
-Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
+" Plugin 'kana/vim-textobj-user'
+" Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-ruby/vim-ruby'
 
 " Syntax Checking
