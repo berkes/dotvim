@@ -72,6 +72,8 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'tomlion/vim-solidity'
 " Vue
 Plugin 'posva/vim-vue'
+" Beancount
+Plugin 'nathangrigg/vim-beancount'
 
 "" Colorschemes
 Plugin 'jacoborus/tender'
@@ -236,3 +238,6 @@ let g:airline_powerline_fonts = 1
 
 " allow the . to execute once for each line of a visual selection
 vnoremap . :normal .<CR>
+
+" beancount Add through snippets
+command -nargs=+ BeanAdd :r !/home/ber/Administratie/beancount/add.rb <args>
