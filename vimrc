@@ -51,6 +51,9 @@ Plugin 'tpope/vim-rails'
 " Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-ruby/vim-ruby'
 
+"" Rust helpers
+Plugin 'rust-lang/rust.vim'
+
 " Syntax Checking
 Plugin 'scrooloose/syntastic'
 
