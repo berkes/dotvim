@@ -196,9 +196,6 @@ let g:vim_markdown_folding_disabled = 1
 
 au BufRead,BufNewFile *.txt call s:setupWrapping()
 
-" drupalfiles are PHP
-au BufRead,BufNewFile *.{module,theme,inc,install,engine,profile,test} set ft=drupal.php
-
 " scad files are openscad
 au Bufread,BufNewFile *.scad set filetype=openscad
 
