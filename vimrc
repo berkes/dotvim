@@ -79,7 +79,7 @@ Plugin 'posva/vim-vue'
 Plugin 'nathangrigg/vim-beancount'
 
 "" Colorschemes
-Plugin 'jacoborus/tender'
+Plugin 'altercation/vim-colors-solarized'
 
 set number
 set ruler
