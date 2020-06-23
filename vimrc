@@ -51,6 +51,9 @@ Plugin 'tpope/vim-rails'
 " Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-ruby/vim-ruby'
 
+"" Rust helpers
+Plugin 'rust-lang/rust.vim'
+
 " Syntax Checking
 Plugin 'scrooloose/syntastic'
 
@@ -76,7 +79,7 @@ Plugin 'posva/vim-vue'
 Plugin 'nathangrigg/vim-beancount'
 
 "" Colorschemes
-Plugin 'jacoborus/tender'
+Plugin 'altercation/vim-colors-solarized'
 
 set number
 set ruler
@@ -192,9 +195,6 @@ au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn
 let g:vim_markdown_folding_disabled = 1
 
 au BufRead,BufNewFile *.txt call s:setupWrapping()
-
-" drupalfiles are PHP
-au BufRead,BufNewFile *.{module,theme,inc,install,engine,profile,test} set ft=drupal.php
 
 " scad files are openscad
 au Bufread,BufNewFile *.scad set filetype=openscad
