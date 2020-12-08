@@ -1,5 +1,7 @@
 .netrwhist
 
+snippets/beancount.snip
+
 *.swp
 *.swo
 spell/*
