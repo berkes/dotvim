@@ -75,8 +75,18 @@ snippet bef_stub
 # Minitest
 ################################################################################
 
+snippet testunit
+  # frozen_string_literal: true
+
+  require 'test_helper'
+
+  class ${1:#:Name}Test < Minitest::Spec
+  end
+
 snippet testmodel
-  require "test_helper"
+  # frozen_string_literal: true
+
+  require 'test_helper'
 
   class ${1:#:Name}Test < ActiveSupport::TestCase
     ${0}
@@ -89,7 +99,9 @@ snippet testmodel
   end
 
 snippet testintegrationapi
-  require "test_helper"
+  # frozen_string_literal: true
+
+  require 'test_helper'
 
   ##
   # As a ...
@@ -102,7 +114,9 @@ snippet testintegrationapi
   end
 
 snippet testintegrationweb
-  require "test_helper"
+  # frozen_string_literal: true
+
+  require 'test_helper'
 
   ##
   # As a ...
@@ -115,7 +129,9 @@ snippet testintegrationweb
   end
 
 snippet testcontrollerapi
-  require "test_helper"
+  # frozen_string_literal: true
+
+  require 'test_helper'
 
   class Api::${1:#:Name}Test < ActionController::ApiTestCase
     ${0}
