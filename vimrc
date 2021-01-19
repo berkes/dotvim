@@ -236,6 +236,9 @@ set hidden
 " Add a shortcut for closing a buffer without closing the window.
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
+" Spelling toggle with leader-s
+map <leader>s :set spell!
+
 " Airline Vim Symbol fonts
 let g:airline_powerline_fonts = 1
 
