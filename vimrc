@@ -51,6 +51,9 @@ Plugin 'tpope/vim-rails'
 " Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-ruby/vim-ruby'
 
+" Coffeescript helpers
+Plugin 'kchmck/vim-coffee-script'
+
 "" Rust helpers
 Plugin 'rust-lang/rust.vim'
 
@@ -103,7 +106,7 @@ set incsearch
 set ignorecase
 set smartcase
 
-" Generic ignore for generated Rails Doc
+" Generic ignore for build assets and external libraries
 " e.g. ctrp-p will use this when searching for files
 set wildignore+=*/doc/*,*/tmp/*,*/vendor/*,*/node_modules/*
 
