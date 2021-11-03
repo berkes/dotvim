@@ -51,9 +51,6 @@ Plugin 'tpope/vim-rails'
 " Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-ruby/vim-ruby'
 
-" Coffeescript helpers
-Plugin 'kchmck/vim-coffee-script'
-
 "" Rust helpers
 Plugin 'rust-lang/rust.vim'
 
@@ -68,16 +65,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'torrancew/vim-openscad'
 " Todotxt
 Plugin 'vim-scripts/todotxt.vim'
-" Slim template language
-Plugin 'slim-template/vim-slim'
 " JSON
 Plugin 'elzr/vim-json'
 " Markdown
 Plugin 'plasticboy/vim-markdown'
-" Solitidy
-Plugin 'tomlion/vim-solidity'
-" Vue
-Plugin 'posva/vim-vue'
 " Beancount
 Plugin 'nathangrigg/vim-beancount'
 
