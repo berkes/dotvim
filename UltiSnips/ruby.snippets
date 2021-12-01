@@ -11,9 +11,22 @@ do ${1:|${2:key}|}
 end
 endsnippet
 
-###########
-#  RSPEC  #
-###########
+################################################################################
+# Rspec
+################################################################################
+
+snippet rspec "Rspec file"
+  # frozen_string_literal: true
+
+  require 'spec_helper'
+
+  ##
+  # +$1Spec+ is a ...
+  describe ${1:#:Class}Test do
+    ${0}
+  end
+endsnippet
+
 snippet describe "Describe block" b
 describe ${1:'${2:description}'} do
   ${3:#TODO}
