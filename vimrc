@@ -29,9 +29,8 @@ Plugin 'szw/vim-tags'
 " Ag, Silver Searcher
 Plugin 'vim-scripts/ag.vim'
 
-" Neocomplete, with snippets
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/neosnippet.vim'
+" Snippets
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 " Simple commenting and uncommenting
@@ -112,38 +111,6 @@ set noequalalways
 " Leader
 let mapleader="\<Space>"
 
-" Neocomplete configuration
-" Disable AutoComplPop.
- let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" incompatibityfix with vim-rails: https://github.com/tpope/vim-rails/issues/283
-let g:neocomplete#force_overwrite_completefunc = 1
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  " For no inserting <CR> key.
-  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" Snippet Configuration
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" Enable snipMate compatibility feature.
-let g:neosnippet#disable_runtime_snippets = { "_": 1, }
-
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets,~/.vim/snippets'
-
 " Relative numbering and toggling thereof
 set relativenumber
 " On focus (we are in Vim) show relative numbering, else show normal numbers
@@ -195,6 +162,14 @@ au Bufread,BufNewFile *.scad set filetype=openscad
 
 " json must not use autohide
 let g:vim_json_syntax_conceal = 0
+
+" <TAB>: completion.
+set omnifunc=syntaxcomplete#Complete
+imap <Tab> <C-P>
+
+" NeoSnippets Setup
+" Add my custom snippets
+let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME.'/.vim/snippets/']
 
 " Allow W, WQ, Wq to work like their lowercase counterparts
 map :W :w
