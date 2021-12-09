@@ -23,9 +23,6 @@ Plugin 'bling/vim-airline'
 " Vinegar, file and disk browsing, nerdtree alternative
 Plugin 'tpope/vim-vinegar'
 
-" Vim-tags: enhance tags support for a.o. Gemfile support.
-Plugin 'szw/vim-tags'
-
 " Ag, Silver Searcher
 Plugin 'vim-scripts/ag.vim'
 
@@ -165,9 +162,14 @@ let g:vim_json_syntax_conceal = 0
 
 " <TAB>: completion.
 set omnifunc=syntaxcomplete#Complete
-imap <Tab> <C-P>
+let g:UltiSnipsExpandTrigger='<c-q>'
+imap <Tab> <C-x><C-o>
+" Ruby needs manually enabled code evaluation as that can be an issue.
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_load_gemfile = 1
 
-" NeoSnippets Setup
+" Ultisnippets Setup
 " Add my custom snippets
 let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME.'/.vim/snippets/']
 
