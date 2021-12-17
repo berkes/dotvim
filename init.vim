@@ -40,3 +40,19 @@ command! MakeTags !ctags -R .
 "   and present.
 let g:netrw_banner=0      " disable the information banner
 nnoremap - :Explore<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGINS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins will be downloaded under the specified directory.
+call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+
+" LSP. Built into nvim 0.6.x but must be configured to run:
+" NOW WE CAN:
+" - configure an existing language server to be automatically started for
+"   projects
+" - Use omnifunc (<c-x><c-o>) to complete based on actual language settings.
+Plug 'neovim/nvim-lspconfig'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
