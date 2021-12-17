@@ -18,3 +18,14 @@ syntax on                   " syntax highlighting
 " - fuzzy-find hidden files need the .-prefix. E.g. ":find .git*hook"
 set path+=**                " Add glob to files to search in current+subdirs
 set wildmenu                " Display all matching files when we tab-complete
+
+" Tag jumping
+" NOW WE CAN:
+" - run :MakeTags to make the tags file
+" - Use ^] to jump to tag under cursor
+" - Use g^] for ambigous tags
+" - Use ^t to jump back up the tag stack
+" KNOWN ISSUES:
+" - ignore patterns like in .gitignore 
+" - does not include libraries and gems packed outside of directory structure
+command! MakeTags !ctags -R .
