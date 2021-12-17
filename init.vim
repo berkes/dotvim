@@ -29,3 +29,14 @@ set wildmenu                " Display all matching files when we tab-complete
 " - ignore patterns like in .gitignore 
 " - does not include libraries and gems packed outside of directory structure
 command! MakeTags !ctags -R .
+
+" File Browsing
+" NOW WE CAN:
+" - :Explore to browse the file system
+" - type `-` as shortcut for :Explore
+" KNOWN ISSUES:
+" - does not follow the current file.
+" - netrw *is* a known issue. It is clunky and not very ergonomic. But simple
+"   and present.
+let g:netrw_banner=0      " disable the information banner
+nnoremap - :Explore<CR>
