@@ -69,6 +69,13 @@ lua << EOF
 require'lspconfig'.rust_analyzer.setup{}
 EOF
 
+" Ruby Solargraph. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#solargraph
+" NOW WE CAN:
+" - Automcomplete, format, lint and errors in Ruby code.
+lua << EOF
+require'lspconfig'.solargraph.setup{}
+EOF
+
 " Keybindings and Completion.
 " See https://github.com/neovim/nvim-lspconfig#Keybindings-and-completion for
 " a full list of options and keybindings. Must work by default in vim, but
