@@ -54,8 +54,17 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " - Use omnifunc (<c-x><c-o>) to complete based on actual language settings.
 Plug 'neovim/nvim-lspconfig'
 
+" Vim Papercolor Theme
+Plug 'NLKNguyen/papercolor-theme'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COLORSCHEMES and SYNTAX
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set background=dark
+colorscheme PaperColor
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP CONFIGS
