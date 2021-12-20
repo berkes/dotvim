@@ -76,6 +76,13 @@ lua << EOF
 require'lspconfig'.solargraph.setup{}
 EOF
 
+" ESLint Javascript linting. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#eslint
+" NOW WE CAN:
+" - Run linters, checkers and autoformatters on JavaScript (and React) code.
+lua << EOF
+require'lspconfig'.eslint.setup{}
+EOF
+
 " Keybindings and Completion.
 " See https://github.com/neovim/nvim-lspconfig#Keybindings-and-completion for
 " a full list of options and keybindings. Must work by default in vim, but
