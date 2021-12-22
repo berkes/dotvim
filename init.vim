@@ -10,15 +10,14 @@ set clipboard+=unnamedplus  " Use system clipboard
 filetype plugin indent on   " allows auto-indenting depending on file type
 syntax on                   " syntax highlighting
 
-" Fuzzy file finder without plugins
+" Fuzzy file finder with FZF but no plugins
 " NOW WE CAN:
-" - Hit tab to :find by partial match
-" - use globs * to make it fuzzy
-" KNOWN ISSUES:
-" - ignore patterns like in .gitignore 
-" - fuzzy-find hidden files need the .-prefix. E.g. ":find .git*hook"
-set path+=**                " Add glob to files to search in current+subdirs
-set wildmenu                " Display all matching files when we tab-complete
+" - hit C-p to open fuzzy finder. Interactive update the result
+" REQUIRED:
+" Installed FZF https://github.com/junegunn/fzf#installation
+set rtp+=~/.fzf/
+" Bind FZF to CTRL-P
+map <C-p> :FZF<CR>
 
 " Tag jumping
 " NOW WE CAN:
