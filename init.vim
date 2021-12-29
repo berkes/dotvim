@@ -67,8 +67,24 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
+" Running tests
+Plug 'vim-test/vim-test'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+" Vim-Test Config 
+" NOW WE CAN:
+" - <leader>tt to run the test nearest to the cursor
+" - <leader>tf to run the current file
+" - <leader>ta to run all the tests
+" - <leader>tl to run the last used test
+" KNOWN ISSUES:
+" - none
+nnoremap <silent> <leader>tn :TestNearest<CR>
+nnoremap <silent> <leader>tf :TestFile<CR>
+nnoremap <silent> <leader>ta :TestSuite<CR>
+nnoremap <silent> <leader>tl :TestLast<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLORSCHEMES and SYNTAX
