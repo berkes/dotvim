@@ -81,6 +81,7 @@ call plug#end()
 " - <leader>tl to run the last used test
 " KNOWN ISSUES:
 " - none
+let test#strategy = "neovim"
 nnoremap <silent> <leader>tn :TestNearest<CR>
 nnoremap <silent> <leader>tf :TestFile<CR>
 nnoremap <silent> <leader>ta :TestSuite<CR>
