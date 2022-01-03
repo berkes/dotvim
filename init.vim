@@ -41,6 +41,27 @@ command! MakeTags !ctags -R .
 let g:netrw_banner=0      " disable the information banner
 nnoremap - :Explore<CR>
 
+" Content Searching
+" NOW WE CAN:
+" - Search for foo in current working directory: :grep foo.
+" - Search for foo in files under src/: :grep foo src.
+" - Search for foo in current file directory: :grep foo %:h1.
+" - Search for foo in current file directory’s parent directory: :grep foo %:h:h (and so on).
+" - Search for exact word foo in current working direcory: :grep -w foo.
+" - Use the :Grep command instead to have a friendlier quickfix window opening
+"   for us.
+" KNOWN ISSUES:
+" - needs ripgrep installed. Instructions here: https://github.com/BurntSushi/ripgrep#installation
+" - it is synchronous and will block (is this actually true for nvim?)
+" - searching backwards is somewhat daunting.
+" - there is no quick way or mapping to Search for word under cursor. yet.
+" - there is no quick way to search for last search like AgFromSearch() had.
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --smart-case\ --hidden
+  set grepformat=%f:%l:%c:%m
+endif
+command! -nargs=+ Grep execute 'silent grep! <args>' | copen
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
