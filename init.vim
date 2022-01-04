@@ -63,6 +63,14 @@ if executable("rg")
 endif
 command! -nargs=+ Grep execute 'silent grep! <args>' | copen
 
+" Allow W, WQ, Wq to work like their lowercase counterparts
+" NOW WE CAN:
+" - hold the shift a tad longer when typing :w. The : is behind shift.
+" - fix common mistyped commands
+map :W :w
+map :Q :q
+map :B :b
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
