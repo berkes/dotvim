@@ -9,6 +9,7 @@ set cc=80                   " set an 80 column border for good coding style
 set ignorecase              " ignore case by default, unless search word contains uppercase
 set smartcase               " ignore case by default, unless search word contains uppercase
 set clipboard+=unnamedplus  " Use system clipboard
+set mouse=a                 " Enable mouse support for all (a) modes
 filetype plugin indent on   " allows auto-indenting depending on file type
 syntax on                   " syntax highlighting
 
