@@ -101,6 +101,14 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Running tests
 Plug 'vim-test/vim-test'
 
+" Beancount.
+" NOW WE CAN:
+" - Syntax highlight beancount files"
+" - run :make will run bean-check.
+" KNOWN ISSUES:
+" autocomplete is not configured (yet), needs integration in cmp to work.
+Plug 'nathangrigg/vim-beancount'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
