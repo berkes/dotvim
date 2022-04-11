@@ -110,6 +110,12 @@ Plug 'vim-test/vim-test'
 " autocomplete is not configured (yet), needs integration in cmp to work.
 Plug 'nathangrigg/vim-beancount'
 
+" Eeasy vim-easy-align
+" NOW WE CAN:
+" - align on characters and expressions, such as =>, or :.
+" - configure mappings (see below) to quickly align common blocks of code.
+Plug 'junegunn/vim-easy-align'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -270,3 +276,16 @@ lua <<EOF
     }
   })
 EOF
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" EasyAlign CONFIGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+" NOW WE CAN:
+" - type vipga to select inner paragraph (vip) and then align that.
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+" NOW WE CAN:
+" - type gaip to align inner paragraph (ip)
+nmap ga <Plug>(EasyAlign)
