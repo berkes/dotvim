@@ -8,6 +8,7 @@ set number                  " add line numbers
 set cc=80                   " set an 80 column border for good coding style
 set ignorecase              " ignore case by default, unless search word contains uppercase
 set smartcase               " ignore case by default, unless search word contains uppercase
+set updatetime=300          " Set updatetime for CursorHold - 300ms of no cursor movement to trigger CursorHold
 set clipboard+=unnamedplus  " Use system clipboard
 set mouse=a                 " Enable mouse support for all (a) modes
 filetype plugin indent on   " allows auto-indenting depending on file type
@@ -193,6 +194,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
@@ -231,6 +233,14 @@ nvim_lsp.solargraph.setup {
 }
 EOF
 
+" Errors and diagnostics come from LSP.
+" CursorHold timeout is set at top with `set updatetime`
+" Show diagnostic popup on cursor hold
+autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+
+" Goto previous/next diagnostic warning/error
+nnoremap <silent> g[ <cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap <silent> g] <cmd>lua vim.diagnostic.goto_next()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips CONFIGS
