@@ -165,6 +165,14 @@ lua << EOF
 require'lspconfig'.eslint.setup{}
 EOF
 
+" Typescript support. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
+" NOW WE CAN:
+" - Autocomplete, import, fix and analyze Typescript.
+" - Get errors and warnings directly in the editor.
+lua << EOF
+require'lspconfig'.tsserver.setup{}
+EOF
+
 " Keybindings and Completion.
 " See https://github.com/neovim/nvim-lspconfig#Keybindings-and-completion for
 " a full list of options and keybindings. Must work by default in vim, but
