@@ -161,9 +161,34 @@ au Bufread,BufNewFile *.scad set filetype=openscad
 let g:vim_json_syntax_conceal = 0
 
 " <TAB>: completion.
-set omnifunc=syntaxcomplete#Complete
-let g:UltiSnipsExpandTrigger='<c-q>'
-imap <Tab> <C-x><C-o>
+set omnifunc=syntaxcomplete#Complete              " Enable omnicompletion
+" Add a smart function to determine what completion to use based on the line.
+" See https://vim.fandom.com/wiki/Smart_mapping_for_tab_completion
+function! Smart_TabComplete()
+  let line = getline('.')                         " current line
+
+  let substr = strpart(line, -1, col('.')+1)      " from the start of the current
+                                                  " line to one character right
+                                                  " of the cursor
+  let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
+  if (strlen(substr)==0)                          " nothing to match on empty string
+    return "\<tab>"
+  endif
+  let has_period = match(substr, '\.') != -1      " position of period, if any
+  let has_slash = match(substr, '\/') != -1       " position of slash, if any
+  if (!has_period && !has_slash)
+    return "\<C-X>\<C-P>"                         " existing text matching
+  elseif ( has_slash )
+    return "\<C-X>\<C-F>"                         " file matching
+  else
+    return "\<C-X>\<C-O>"                         " plugin matching
+  endif
+endfunction
+let g:UltiSnipsExpandTrigger='<c-q>'              " Ultisnips otherwise hijacks the <tab>
+" Use the function when hitting <tab> in insert mode. See wiki link above
+" for explanation on the <c-r>
+inoremap <tab> <c-r>=Smart_TabComplete()<CR>
+
 " Ruby needs manually enabled code evaluation as that can be an issue.
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
