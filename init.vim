@@ -117,8 +117,24 @@ Plug 'nathangrigg/vim-beancount'
 " - configure mappings (see below) to quickly align common blocks of code.
 Plug 'junegunn/vim-easy-align'
 
+" Comment tooling
+" https://github.com/numToStr/Comment.nvim
+" NOW WE CAN:
+" - `gcc` - Toggles the current line using linewise comment
+" - `gbc` - Toggles the current line using blockwise comment
+" - `[count]gcc` - Toggles the number of line given as a prefix-count using linewise
+" - `[count]gbc` - Toggles the number of line given as a prefix-count using blockwise
+" - visual: `gc` - Toggles the region using linewise comment
+" - visual: `gb` - Toggles the region using blockwise comment
+Plug 'numToStr/Comment.nvim'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+" Comment.vim needs a call to setup after plug#end()
+lua << EOF
+require('Comment').setup()
+EOF
 
 " Vim-Test Config 
 " NOW WE CAN:
