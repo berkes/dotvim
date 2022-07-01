@@ -190,8 +190,6 @@ require'lspconfig'.tsserver.setup{}
 EOF
 
 " CSS support. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ssls
-" NOW WE CAN:
-" - Use contextual snippet support through neosnip.
 lua << EOF
 require'lspconfig'.cssls.setup{}
 EOF
