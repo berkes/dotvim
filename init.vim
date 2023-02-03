@@ -166,7 +166,16 @@ colorscheme PaperColor
 " - Use context specific and language specific omnicomplete.
 " - Get errors, warnings and linting directly in the editor.
 lua << EOF
-require'lspconfig'.rust_analyzer.setup{}
+require'lspconfig'.rust_analyzer.setup {
+  on_attach=on_attach;
+  settings = {
+    ["rust-analyzer"] = {
+      checkOnSave = {
+        extraArgs={"--target-dir", "/tmp/rust-analyzer-check"}
+      }
+    }
+  }
+}
 EOF
 
 " Ruby Solargraph. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#solargraph
