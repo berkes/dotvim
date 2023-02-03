@@ -240,7 +240,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'rust_analyzer', 'eslint' }
+local servers = { 'rust_analyzer', 'eslint', 'tsserver' }
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Configure generic settings, applicable to all servers
