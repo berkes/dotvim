@@ -99,6 +99,7 @@ Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 
 " UltiSnips Snippets with integration in cmp
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " Running tests
