@@ -351,11 +351,9 @@ EOF
 " EasyAlign CONFIGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-" NOW WE CAN:
-" - type vipga to select inner paragraph (vip) and then align that.
-xmap ga <Plug>(EasyAlign)
-
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 " NOW WE CAN:
+" - type vipga to select inner paragraph (vip) and then align that.
 " - type gaip to align inner paragraph (ip)
+xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
