@@ -119,6 +119,12 @@ Plug 'nathangrigg/vim-beancount'
 " TODO: remove when we're done with innxx project. Slim is hardly used.
 Plug 'slim-template/vim-slim'
 
+" Prisma Scheme
+" NOW WE CAN:
+" - Syntax highlight prisma scheme files
+" TODO: remove when we're done with 10kb prisma stuff
+Plug 'prisma/vim-prisma'
+
 " Eeasy vim-easy-align
 " NOW WE CAN:
 " - align on characters and expressions, such as =>, or :.
