@@ -87,8 +87,8 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " - Use omnifunc (<c-x><c-o>) to complete based on actual language settings.
 Plug 'neovim/nvim-lspconfig'
 
-" Vim Papercolor Theme
-Plug 'NLKNguyen/papercolor-theme'
+" Vim TokyoNight
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " CMP complete
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -112,6 +112,12 @@ Plug 'vim-test/vim-test'
 " KNOWN ISSUES:
 " autocomplete is not configured (yet), needs integration in cmp to work.
 Plug 'nathangrigg/vim-beancount'
+
+" Slim template
+" NOW WE CAN:
+" - Syntax highlight slim files"
+" TODO: remove when we're done with innxx project. Slim is hardly used.
+Plug 'slim-template/vim-slim'
 
 " Eeasy vim-easy-align
 " NOW WE CAN:
@@ -156,7 +162,7 @@ nnoremap <silent> <leader>tl :TestLast<CR>
 " COLORSCHEMES and SYNTAX
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark
-colorscheme PaperColor
+colorscheme tokyonight-moon
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP CONFIGS
