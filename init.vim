@@ -96,6 +96,7 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-emoji'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 
@@ -333,9 +334,10 @@ lua <<EOF
     },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'cmp_tabnine' },
+      { name = 'emoji', insert = true },
       { name = 'ultisnips' },
       { name = 'path' },
+      { name = 'cmp_tabnine' },
     }, {
       { name = 'buffer' },
     })
