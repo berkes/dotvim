@@ -128,6 +128,11 @@ Plug 'slim-template/vim-slim'
 " TODO: remove when we're done with 10kb prisma stuff
 Plug 'prisma/vim-prisma'
 
+" Hurl syntax highlight
+" NOW WE CAN:
+" - Syntax highlight hurl files. See http://hurl.dev
+Plug 'fourjay/vim-hurl'
+
 " Eeasy vim-easy-align
 " NOW WE CAN:
 " - align on characters and expressions, such as =>, or :.
