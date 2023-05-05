@@ -5,7 +5,7 @@ set expandtab               " converts tabs to white space
 set shiftwidth=2            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
 set number                  " add line numbers
-set cc=80                   " set an 80 column border for good coding style
+set cc=100                   " set an 80 column border for good coding style
 set ignorecase              " ignore case by default, unless search word contains uppercase
 set smartcase               " ignore case by default, unless search word contains uppercase
 set updatetime=300          " Set updatetime for CursorHold - 300ms of no cursor movement to trigger CursorHold
