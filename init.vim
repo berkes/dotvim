@@ -52,7 +52,7 @@ nnoremap - :Explore<CR>
 " - Search for foo in current file directory: :grep foo %:h1.
 " - Search for foo in current file directory’s parent directory: :grep foo %:h:h (and so on).
 " - Search for exact word foo in current working direcory: :grep -w foo.
-" - Use the :Grep command instead to have a friendlier quickfix window opening
+" - Use the :Grep or :Gr command instead to have a friendlier quickfix window opening
 "   for us.
 " KNOWN ISSUES:
 " - needs ripgrep installed. Instructions here: https://github.com/BurntSushi/ripgrep#installation
@@ -65,6 +65,8 @@ if executable("rg")
   set grepformat=%f:%l:%c:%m
 endif
 command! -nargs=+ Grep execute 'silent grep! <args>' | copen
+
+map :Gr :Grep
 
 " Allow W, WQ, Wq to work like their lowercase counterparts
 " NOW WE CAN:
