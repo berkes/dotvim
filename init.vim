@@ -98,7 +98,6 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-emoji'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 
 " UltiSnips Snippets with integration in cmp
 Plug 'SirVer/ultisnips'
@@ -342,7 +341,6 @@ lua <<EOF
       { name = 'emoji', insert = true },
       { name = 'ultisnips' },
       { name = 'path' },
-      { name = 'cmp_tabnine' },
     }, {
       { name = 'buffer' },
     })
