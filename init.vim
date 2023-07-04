@@ -104,6 +104,9 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
+" Copilot
+Plug 'github/copilot.vim'
+
 " Running tests
 Plug 'vim-test/vim-test'
 
