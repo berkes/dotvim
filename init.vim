@@ -14,6 +14,9 @@ set mouse=a                 " Enable mouse support for all (a) modes
 filetype plugin indent on   " allows auto-indenting depending on file type
 syntax on                   " syntax highlighting
 
+" Open all folds when opening a file
+autocmd BufWinEnter * silent! :%foldopen!
+
 " Fuzzy file finder with FZF but no plugins
 " NOW WE CAN:
 " - hit C-p to open fuzzy finder. Interactive update the result
@@ -329,6 +332,10 @@ set completeopt=menu,menuone,noselect
 
 lua <<EOF
   -- Setup nvim-cmp.
+
+  -- NOW WE CAN:
+  -- - Use C-n and C-p to navigate the completion menu. Then C-y to select.
+  -- - complete from lsp, snippets, path, emoji and buffer words.
   local cmp = require'cmp'
 
   cmp.setup({
@@ -342,24 +349,41 @@ lua <<EOF
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
       ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
       ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
       ['<C-e>'] = cmp.mapping({
         i = cmp.mapping.abort(),
         c = cmp.mapping.close(),
       }),
-      ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item({ cmp.SelectBehavior.Insert} ), { "i" }),
-      ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item({ cmp.SelectBehavior.Insert }), { "i" }),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item({ cmp.SelectBehavior.Insert} ), { "i" }),
+      ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item({ cmp.SelectBehavior.Insert }), { "i" }),
+      ['<C-y>'] = cmp.mapping.confirm(
+        { select = true }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        { "i", "c" }
+      ), 
     },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'emoji', insert = true },
       { name = 'ultisnips' },
       { name = 'path' },
-    }, {
-      { name = 'buffer' },
-    })
+      { name = 'emoji', insert = true  },
+      { name = 'buffer', keyword_length = 5 },
+    }),
+    formatting = {
+      fields = {'abbr', 'kind', 'menu'},
+      format = function(entry, item)
+        local menu_icon = {
+          nvim_lsp = '[lsp ]',
+          ultisnips = '[snip]',
+          path = '[path]',
+          emoji = '[emoj]',
+          buffer = '[buff]',
+        }
+
+        item.menu = menu_icon[entry.source.name]
+        return item
+      end,
+    },
   })
+
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline('/', {
