@@ -311,6 +311,9 @@ nvim_lsp.solargraph.setup {
 }
 EOF
 
+" Open a list of all diagnostics with :ll
+:lua vim.lsp.diagnostic.set_loclist()
+
 " Errors and diagnostics come from LSP.
 " CursorHold timeout is set at top with `set updatetime`
 " Show diagnostic popup on cursor hold
