@@ -158,18 +158,6 @@ Plug 'numToStr/Comment.nvim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
-" Plug "github/copilot.vim"
-" For some reason github.com/github.copilot does not use Plugin manager but
-" manually installs into a dir. TODO: find out why and if we want this
-" config from https://github.com/orgs/community/discussions/50415
-lua << EOF
-vim.g.copilot_no_tab_map = true
-vim.g.copilot_assume_mapped = true
-vim.api.nvim_set_keymap("i", "<C-f>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-EOF
-" NOW WE CAN:
-" control-f in insert mode to get suggestions from copilot
-
 " Comment.vim needs a call to setup after plug#end()
 lua << EOF
 require('Comment').setup()
@@ -312,7 +300,7 @@ nvim_lsp.solargraph.setup {
 EOF
 
 " Open a list of all diagnostics with :ll
-:lua vim.lsp.diagnostic.set_loclist()
+" :lua vim.lsp.diagnostic.set_loclist()
 
 " Errors and diagnostics come from LSP.
 " CursorHold timeout is set at top with `set updatetime`
