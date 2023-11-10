@@ -261,6 +261,8 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('v', '<space>a', '<cmd>lua vim.lsp.buf.range_code_action()<CR>', opts)
+  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
@@ -387,10 +389,13 @@ EOF
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " EasyAlign CONFIGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+" Start interactive EasyAlign in visual mode (e.g. vipal)
+" Start interactive EasyAlign for a motion/text object (e.g. alip)
+"
+" Default and common keybinding is ga, but that conflicts with lsp's
+" code-actions. So we remap it to al.
 " NOW WE CAN:
-" - type vipga to select inner paragraph (vip) and then align that.
-" - type gaip to align inner paragraph (ip)
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
+" - type vipal to select inner paragraph (vip) and then align that.
+" - type alip to align inner paragraph (ip)
+xmap al <Plug>(EasyAlign)
+nmap al <Plug>(EasyAlign)
