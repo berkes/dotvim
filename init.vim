@@ -17,15 +17,6 @@ syntax on                   " syntax highlighting
 " Open all folds when opening a file
 autocmd BufWinEnter * silent! :%foldopen!
 
-" Fuzzy file finder with FZF but no plugins
-" NOW WE CAN:
-" - hit C-p to open fuzzy finder. Interactive update the result
-" REQUIRED:
-" Installed FZF https://github.com/junegunn/fzf#installation
-set rtp+=~/.fzf/
-" Bind FZF to CTRL-P
-map <C-p> :FZF<CR>
-
 " Tag jumping
 " NOW WE CAN:
 " - run :MakeTags to make the tags file
@@ -48,29 +39,6 @@ command! MakeTags !ctags -R .
 let g:netrw_banner=0      " disable the information banner
 nnoremap - :Explore<CR>
 
-" Content Searching
-" NOW WE CAN:
-" - Search for foo in current working directory: :grep foo.
-" - Search for foo in files under src/: :grep foo src.
-" - Search for foo in current file directory: :grep foo %:h1.
-" - Search for foo in current file directory’s parent directory: :grep foo %:h:h (and so on).
-" - Search for exact word foo in current working direcory: :grep -w foo.
-" - Use the :Grep or :Gr command instead to have a friendlier quickfix window opening
-"   for us.
-" KNOWN ISSUES:
-" - needs ripgrep installed. Instructions here: https://github.com/BurntSushi/ripgrep#installation
-" - it is synchronous and will block (is this actually true for nvim?)
-" - searching backwards is somewhat daunting.
-" - there is no quick way or mapping to Search for word under cursor. yet.
-" - there is no quick way to search for last search like AgFromSearch() had.
-if executable("rg")
-  set grepprg=rg\ --vimgrep\ --smart-case\ --hidden
-  set grepformat=%f:%l:%c:%m
-endif
-command! -nargs=+ Grep execute 'silent grep! <args>' | copen
-
-map :Gr :Grep
-
 " Allow W, WQ, Wq to work like their lowercase counterparts
 " NOW WE CAN:
 " - hold the shift a tad longer when typing :w. The : is behind shift.
@@ -84,7 +52,6 @@ map :B :b
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins will be downloaded under the specified directory.
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-
 " LSP. Built into nvim 0.6.x but must be configured to run:
 " NOW WE CAN:
 " - configure an existing language server to be automatically started for
@@ -94,6 +61,15 @@ Plug 'neovim/nvim-lspconfig'
 
 " Vim TokyoNight
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+
+" Telescope
+" Ensure we have the latest version of fzf
+" installed FZF https://github.com/junegunn/fzf#installation
+" Now some other Telescope Dependencies
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+" And telescope itself, using the release branch
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 
 " CMP complete
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -176,6 +152,15 @@ nnoremap <silent> <leader>tn :TestNearest<CR>
 nnoremap <silent> <leader>tf :TestFile<CR>
 nnoremap <silent> <leader>ta :TestSuite<CR>
 nnoremap <silent> <leader>tl :TestLast<CR>
+
+" Telescope Config
+" NOW WE CAN:
+" - use <leader>ff or <C-p> to find files
+nnoremap <C-p> <cmd>Telescope find_files<CR>
+nnoremap <leader>ff <cmd>Telescope find_files<CR>
+nnoremap <leader>fg <cmd>Telescope live_grep<CR>
+nnoremap <leader>fb <cmd>Telescope buffers<CR>
+nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLORSCHEMES and SYNTAX
