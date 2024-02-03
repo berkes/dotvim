@@ -131,6 +131,14 @@ Plug 'junegunn/vim-easy-align'
 " - visual: `gb` - Toggles the region using blockwise comment
 Plug 'numToStr/Comment.nvim'
 
+" CSV plugin. Editing and syntax highlighting for CSV files.
+"
+" NOW WE CAN:
+" - Syntax highlight CSV files
+" - Operate on columns or rows. See :help csv
+" - Insert new records with :NewRecord
+Plug 'chrisbra/csv.vim'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
