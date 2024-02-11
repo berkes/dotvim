@@ -229,6 +229,18 @@ lua << EOF
 require'lspconfig'.cssls.setup{}
 EOF
 
+" Python support. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pyright
+" Install Pyright with sudo snap install pyright --classic or another way.
+" Pyright is ran with pipenv and the snap version of pyright. Pipenv so that
+" we can use the correct version of Python for the project. Snap so that we
+" can use the latest version of pyright without pip- or conda woes
+" NOW WE CAN:
+" - Autocomplete, import, fix and analyze Python.
+" - Use type hints and get errors and warnings directly in the editor.
+lua << EOF
+require'lspconfig'.pyright.setup{}
+EOF
+
 " Keybindings and Completion.
 " See https://github.com/neovim/nvim-lspconfig#Keybindings-and-completion for
 " a full list of options and keybindings. Must work by default in vim, but
@@ -266,7 +278,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'rust_analyzer', 'eslint', 'tsserver' }
+local servers = { 'rust_analyzer', 'eslint', 'tsserver', 'pyright' }
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Configure generic settings, applicable to all servers
