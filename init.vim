@@ -179,6 +179,12 @@ colorscheme tokyonight-moon
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP CONFIGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" When debugging, set the log level to debug
+" lua << EOF
+" vim.lsp.set_log_level("debug")
+" EOF
+
 " Rust Analyzer. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
 " NOW WE CAN:
 " - Use context specific and language specific omnicomplete.
