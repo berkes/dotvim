@@ -209,19 +209,16 @@ lua << EOF
 require'lspconfig'.solargraph.setup{}
 EOF
 
-" ESLint Javascript linting. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#eslint
+" JavaScript and TypeScript support via deno. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#denols
 " NOW WE CAN:
-" - Run linters, checkers and autoformatters on JavaScript (and React) code.
+" - Autocomplete, import, fix and analyze JavaScript and TypeScript.
+" - Use type hints and get errors and warnings directly in the editor.
+" But only if we have deno installed and in use in the project.
 lua << EOF
-require'lspconfig'.eslint.setup{}
-EOF
-
-" Typescript support. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
-" NOW WE CAN:
-" - Autocomplete, import, fix and analyze Typescript.
-" - Get errors and warnings directly in the editor.
-lua << EOF
-require'lspconfig'.tsserver.setup{}
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"
+}
+require'lspconfig'.denols.setup{}
 EOF
 
 " CSS support. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ssls
@@ -278,7 +275,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'rust_analyzer', 'eslint', 'tsserver', 'pyright' }
+local servers = { 'rust_analyzer', 'pyright' }
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Configure generic settings, applicable to all servers
