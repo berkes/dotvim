@@ -321,6 +321,24 @@ autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 nnoremap <silent> g[ <cmd>lua vim.diagnostic.goto_prev()<CR>
 nnoremap <silent> g] <cmd>lua vim.diagnostic.goto_next()<CR>
 
+" Yank diagnostic error
+" NOW WE CAN:
+" - Copy the error message to the clipboard with <leader>e
+lua << EOF
+vim.api.nvim_set_keymap('n', '<leader>e', [[:lua YankDiagnosticError()<CR>]],
+  { noremap = true, silent = true, desc = "Copy error" })
+
+function YankDiagnosticError()
+  vim.diagnostic.open_float()
+  vim.diagnostic.open_float()
+  local win_id = vim.fn.win_getid()    -- get the window ID of the floating window
+  vim.cmd("normal! j")                 -- move down one row
+  vim.cmd("normal! VG")                -- select everything from that row down
+  vim.cmd("normal! y")                 -- yank selected text
+  vim.api.nvim_win_close(win_id, true) -- close the floating window by its ID
+end
+EOF
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips CONFIGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
