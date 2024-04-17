@@ -30,7 +30,7 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- General settings and servers setup
-local servers = { 'rust_analyzer', 'pyright', 'denols', 'solargraph', 'cssls' }
+local servers = { 'rust_analyzer', 'pyright', 'tsserver', 'solargraph', 'cssls' }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
