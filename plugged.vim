@@ -90,5 +90,11 @@ Plug 'numToStr/Comment.nvim'
 " - Insert new records with :NewRecord
 Plug 'chrisbra/csv.vim'
 
+" CSS Colors plugin.  A very fast, multi-syntax context-sensitive color name highlighter
+" NOW WE CAN:
+" - Highlight color names in CSS, SCSS, LESS, and SASS files
+" - Highlight color names in HTML files
+Plug 'ap/vim-css-color'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
