@@ -18,8 +18,8 @@ vim.api.nvim_set_keymap('n', '<leader>tl', ':TestLast<CR>', {silent = true, nore
 -- Telescope Config
 -- Key mappings:
 -- - <leader>ff or <C-p> to find files
-vim.api.nvim_set_keymap('n', '<C-p>', '<cmd>Telescope find_files<CR>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-p>', '<cmd>Telescope find_files hidden=true<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files hidden=true<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', {noremap = true})
