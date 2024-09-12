@@ -10,8 +10,8 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " - Use omnifunc (<c-x><c-o>) to complete based on actual language settings.
 Plug 'neovim/nvim-lspconfig'
 
-" Vim TokyoNight
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+" Vim Catppuccino Theme
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 " Telescope
 " Ensure we have the latest version of fzf

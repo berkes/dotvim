@@ -77,3 +77,31 @@ let g:UltiSnipsSnippetDirectories=[$HOME."/Sjablonen/UltiSnips"]
 " - type alip to align inner paragraph (ip)
 xmap al <Plug>(EasyAlign)
 nmap al <Plug>(EasyAlign)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Clipboard fix workdaround. 
+" Window started fllickering mostly when using netrw and clipboard integration.
+" This is a workaround to prevent that from happening.
+" see https://github.com/neovim/neovim/issues/9806#issuecomment-586666047 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Enable system clipboard integration
+set clipboard+=unnamedplus
+" Workaround for neovim wl-clipboard and netrw interaction hang 
+" (see: https://github.com/neovim/neovim/issues/6695 and
+" https://github.com/neovim/neovim/issues/9806) 
+" let g:clipboard = {
+"       \   'name': 'myClipboard',
+"       \   'copy': {
+"       \      '+': 'wl-copy',
+"       \      '*': 'wl-copy',
+"       \    },
+"       \   'paste': {
+"       \      '+': 'wl-paste -o',
+"       \      '*': 'wl-paste -o',
+"       \   },
+"       \   'cache_enabled': 0,
+"       \ }
+" BK: above is not working. So we use the following workaround
+" to prevent flickering: we disable the clipboard integration entirely.
+" set clipboard=

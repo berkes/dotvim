@@ -25,5 +25,5 @@ vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>', {norema
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', {noremap = true})
 
 -- Color scheme and syntax
-vim.opt.background = 'dark'
-vim.cmd [[colorscheme tokyonight-moon]]
+-- vim.opt.background = 'dark'
+vim.cmd [[colorscheme catppuccin-macchiato]]
