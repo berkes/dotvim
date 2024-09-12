@@ -29,10 +29,10 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-emoji'
 Plug 'hrsh7th/nvim-cmp'
 
-" UltiSnips Snippets with integration in cmp
-Plug 'SirVer/ultisnips'
+" Snippy snippets
+Plug 'dcampos/nvim-snippy'
+Plug 'dcampos/cmp-snippy'
 Plug 'honza/vim-snippets'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " Copilot
 Plug 'github/copilot.vim'

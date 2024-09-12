@@ -10,7 +10,7 @@ cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            vim.fn["UltiSnips#Anon"](args.body)
+          require('snippy').expand_snippet(args.body) -- For `snippy` users.
         end,
     },
     mapping = {
@@ -30,7 +30,7 @@ cmp.setup({
     },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'ultisnips' },
+        { name = 'snippy' },
         { name = 'path' },
         { name = 'emoji', insert = true },
         { name = 'buffer', keyword_length = 5 },
