@@ -14,9 +14,6 @@ set mouse=a                 " Enable mouse support for all (a) modes
 filetype plugin indent on   " allows auto-indenting depending on file type
 syntax on                   " syntax highlighting
 
-" Open all folds when opening a file
-autocmd BufWinEnter * silent! :%foldopen!
-
 " Tag jumping
 " NOW WE CAN:
 " - run :MakeTags to make the tags file

@@ -27,3 +27,18 @@ vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', {nore
 -- Color scheme and syntax
 -- vim.opt.background = 'dark'
 vim.cmd [[colorscheme catppuccin-macchiato]]
+
+-- code folding
+-- NOW WE CAN:
+-- - za to toggle a fold
+-- - zc to close a fold
+-- - zo to open a fold
+-- - zR to open all folds recursively
+-- - zM to close all folds recursively
+-- :help fold-commands
+-- it uses the syntax highlighting to fold the code
+vim.opt.foldenable = true
+vim.opt.foldmethod = 'syntax'
+vim.opt.foldlevelstart = 99
+vim.opt.foldcolumn = '0'
+vim.opt.foldtext = 'foldtext#foldtext()'
