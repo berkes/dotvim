@@ -30,6 +30,13 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- General settings and servers setup
+--
+-- The following servers are supported:
+-- - rust_analyzer
+-- - pyright - Install with `pip install pyright --user`.
+-- - tsserver - Install with `npm install -g typescript typescript-language-server`.
+-- - solargraph - Install with `gem install solargraph` or `bundle add solargraph`.
+-- - cssls - Install with ???
 local servers = { 'rust_analyzer', 'pyright', 'tsserver', 'solargraph', 'cssls' }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
