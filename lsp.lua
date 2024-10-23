@@ -30,6 +30,9 @@ end
 -- Enhanced LSP capabilities
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+-- jsonls, via vscode-json-languageserver only provides completion when snippet support is enabled
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 -- General settings and servers setup
 --
 -- The following servers are supported:
@@ -38,7 +41,8 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 -- - tsserver - Install with `npm install -g typescript typescript-language-server`.
 -- - solargraph - Install with `gem install solargraph` or `bundle add solargraph`.
 -- - cssls - Install with ???
-local servers = { 'rust_analyzer', 'pyright', 'tsserver', 'solargraph', 'cssls' }
+-- - jsonls - Install with `npm install -g vscode-langservers-extracted`.
+local servers = { 'rust_analyzer', 'pyright', 'tsserver', 'solargraph', 'cssls', 'jsonls' }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
