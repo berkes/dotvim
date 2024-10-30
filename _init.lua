@@ -42,3 +42,12 @@ vim.opt.foldmethod = 'syntax'
 vim.opt.foldlevelstart = 99
 vim.opt.foldcolumn = '0'
 vim.opt.foldtext = 'foldtext#foldtext()'
+
+-- Aliases and mappings
+-- Allow W, WQ, Wq to work like their lowercase counterparts
+-- NOW WE CAN:
+-- - hold the shift a tad longer when typing :w. The : is behind shift.
+-- - fix common mistyped commands
+vim.api.nvim_set_keymap('c', 'W', 'w', { noremap = true })
+vim.api.nvim_set_keymap('c', 'Q', 'q', { noremap = true })
+vim.api.nvim_set_keymap('c', 'B', 'b', { noremap = true })
