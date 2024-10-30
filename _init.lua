@@ -51,3 +51,5 @@ vim.opt.foldtext = 'foldtext#foldtext()'
 vim.api.nvim_set_keymap('c', 'W', 'w', { noremap = true })
 vim.api.nvim_set_keymap('c', 'Q', 'q', { noremap = true })
 vim.api.nvim_set_keymap('c', 'B', 'b', { noremap = true })
+vim.api.nvim_set_keymap('c', 'Vs', 'vsplit', { noremap = true })
+vim.api.nvim_set_keymap('c', 'VS', 'vsplit', { noremap = true })
