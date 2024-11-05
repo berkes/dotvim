@@ -48,8 +48,10 @@ vim.opt.foldtext = 'foldtext#foldtext()'
 -- NOW WE CAN:
 -- - hold the shift a tad longer when typing :w. The : is behind shift.
 -- - fix common mistyped commands
-vim.api.nvim_set_keymap('c', 'W', 'w', { noremap = true })
-vim.api.nvim_set_keymap('c', 'Q', 'q', { noremap = true })
-vim.api.nvim_set_keymap('c', 'B', 'b', { noremap = true })
-vim.api.nvim_set_keymap('c', 'Vs', 'vsplit', { noremap = true })
-vim.api.nvim_set_keymap('c', 'VS', 'vsplit', { noremap = true })
+vim.api.nvim_create_user_command('W', 'w', {})
+vim.api.nvim_create_user_command('WQ', 'wq', {})
+vim.api.nvim_create_user_command('Wq', 'wq', {})
+vim.api.nvim_create_user_command('Q', 'q', {})
+vim.api.nvim_create_user_command('B', 'b', {})
+vim.api.nvim_create_user_command('Vs', 'vsplit', {})
+vim.api.nvim_create_user_command('VS', 'vsplit', {})
